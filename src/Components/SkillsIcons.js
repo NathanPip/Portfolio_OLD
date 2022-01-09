@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SkillsIcon({ skill, animating, current, animationFinished, mouseEnter, mouseLeave}) {
+function SkillsIcon({ skill, animating, current, mouseEnter, mouseLeave}) {
 
 
     const desktopTemplate = (
@@ -10,7 +10,7 @@ function SkillsIcon({ skill, animating, current, animationFinished, mouseEnter, 
 
     )
     const mobileTemplate = (
-        <div className={`icon-full ${animating ? 'animating' : ''} ${current ? 'current' : 'next'}`} id={skill.id} onAnimationEnd={animationFinished} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
+        <div className={`icon-full`} id={skill.id} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
             <div className="icon-img">
                 <img src={skill.src} alt={skill.id} />
             </div>
