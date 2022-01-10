@@ -29,7 +29,7 @@ const SKILLS_DATA = [
     title: "React",
     src: "https://img.icons8.com/ios-glyphs/120/000000/react.png",
     desc: "lorem ipsumn joeasnoidnpa fsdionf sdf iosd908wejrnj 90jnjdhshnf 9ijaIEWHJJNFIJNSDHJB FIOSNDF SDNFJS PL NJDHSFCBGUF DS"
-  },
+  }
 ];
 
 const PROJECTS_DATA = [

@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SkillsIcon({ skill, animating, current, mouseEnter, mouseLeave}) {
+function SkillsIcon({ skill, animating, current, mouseEnter, mouseLeave }) {
 
 
     const desktopTemplate = (
