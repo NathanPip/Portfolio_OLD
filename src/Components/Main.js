@@ -9,7 +9,7 @@ function Main({skills}) {
         <div className="main">
             <About />
             <Skills skills={skills}/>
-            <h2 className="projects-head">Projects</h2>
+            <h2 className="projects-title">Projects</h2>
             <Projects />
             <Contact />
         </div>

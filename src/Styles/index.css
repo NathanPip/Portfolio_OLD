@@ -13,12 +13,17 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   font-family: "Work Sans", sans-serif;
   font-size: 1.5rem;
+  line-height: 1.25;
   background-color: black;
   color: white;
 }
 
 .hide {
   display: none;
+}
+
+#root {
+  margin-bottom: 2em;
 }
 
 .header {
@@ -28,7 +33,6 @@ body {
 }
 .header #title {
   font-size: 3em;
-  margin-top: 1.1em;
 }
 .header #title-desc {
   display: block;
@@ -46,7 +50,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
   }
   .header #title {
     font-size: 3.5em;
@@ -76,6 +80,7 @@ body {
 
 .about {
   padding: 0 5% 0;
+  line-height: 1.5;
 }
 
 .skills {
@@ -139,7 +144,7 @@ body {
   bottom: 5%;
 }
 .skills .icon-full:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
   box-shadow: 0px 0px 15px 0px white;
   cursor: pointer;
 }
@@ -185,6 +190,10 @@ body {
   padding: 0.75em;
 }
 
+.projects-title {
+  padding: 0 5% 0;
+}
+
 .projects {
   width: 100%;
   margin-bottom: 2em;
@@ -211,6 +220,39 @@ body {
   background-color: transparent;
   color: white;
   border: none;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  padding: 0 5% 0;
+}
+.contact .contact-body {
+  display: flex;
+}
+.contact .contact-form {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding-right: 3em;
+}
+.contact .contact-aside {
+  flex-grow: 1;
+}
+.contact input, .contact textarea {
+  margin-bottom: 1em;
+  border-radius: 10px;
+  padding: 0.25em 0.5em;
+}
+.contact textarea {
+  min-height: 8em;
+}
+.contact button {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 0.5em;
 }
 
 @keyframes slide {

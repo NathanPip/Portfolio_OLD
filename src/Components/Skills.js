@@ -13,7 +13,6 @@ function Skills({ skills }) {
         const interval = setInterval(() => {
             if (canAnimate)
                 startAnimation();
-            console.log(canAnimate)
         }, 4000);
         return () => clearInterval(interval);
     }, [index, canAnimate]);
@@ -39,12 +38,10 @@ function Skills({ skills }) {
     }
 
     function startAnimation() {
-        console.log('animationStarted')
         setAnimating(true);
     }
 
     function onAnimationEnd() {
-        console.log('animationEnded')
         setAnimating(false);
     }
 
@@ -64,7 +61,6 @@ function Skills({ skills }) {
         let next = []
         if (isCurrent) {
             for (let i = index; i < iconsDisplayed + index; i++) {
-                console.log('current: ' + i + ' index: ' + index)
                 displayed.push(
                     <SkillsIcon key={i.toString()} skill={i <= skills.length - 1 ? skills[i] : skills[i % skills.length]} mouseEnter={() => toggleAnimation(false)} mouseLeave={() => toggleAnimation(true)} />
                 )
@@ -72,7 +68,6 @@ function Skills({ skills }) {
             return displayed;
         } else {
             for (let i = rotateSkills(index); i < iconsDisplayed + rotateSkills(index); i++) {
-                console.log('next: ' + i)
                 next.push(
                     <SkillsIcon key={i.toString()} skill={i <= skills.length - 1 ? skills[i] : skills[i % skills.length]} mouseEnter={() => toggleAnimation(false)} mouseLeave={() => toggleAnimation(true)} />
                 )
