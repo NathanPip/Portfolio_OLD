@@ -75,8 +75,7 @@ body {
     display: flex;
     flex-direction: column;
     #title {
-        font-size: 3em;
-        // margin-top: 1.1em;    
+        font-size: 3em;   
     }
     #title-desc {
         display: block;
@@ -87,8 +86,8 @@ body {
         font-size: 1.5em;
     }
     
-    @include breakpoint($extra-large) {
-        font-size: 2.5em;
+    @include breakpoint($large) {
+        font-size: 2em;
         display: grid;
         grid-template-columns: 1fr 1fr;
         align-items: center;
@@ -264,9 +263,6 @@ body {
     display: flex;
     flex-direction: column;
     padding: 0 5% 0;
-    .contact-body {
-        display: flex;
-    }
     .contact-form {
         display: flex;
         flex-direction: column;
@@ -291,6 +287,11 @@ body {
         border: 1px solid $text-color;
         border-radius: 5px;
         padding: .5em;
+    }
+    @include breakpoint($extra-large) {
+        .contact-body {
+            display: flex;
+        }
     }
 }
 

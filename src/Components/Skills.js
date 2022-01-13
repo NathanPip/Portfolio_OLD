@@ -6,7 +6,7 @@ function Skills({ skills }) {
     const [index, setIndex] = useState(0);
     const [isAnimating, setAnimating] = useState(false);
     const [canAnimate, setCanAnimate] = useState(true);
-    const [iconsDisplayed, setIconsDisplayed] = useState(Math.floor(window.innerWidth / 400));
+    const [iconsDisplayed, setIconsDisplayed] = useState(window.innerWidth > 400 ? Math.floor(window.innerWidth / 400) : 1);
     const [windowSize, setWindowSize] = useState(window.innerWidth);
 
     useEffect(() => {
@@ -43,6 +43,7 @@ function Skills({ skills }) {
 
     function onAnimationEnd() {
         setAnimating(false);
+        setCanAnimate(true);
     }
 
     function startStopAnimation(toggle) {
