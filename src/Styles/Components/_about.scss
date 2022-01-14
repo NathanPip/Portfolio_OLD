@@ -1,0 +1,12 @@
+@import "../Utils/variables";
+@import "../Utils/mixins";
+@import "../Utils/keyframes";
+
+#about {
+    padding: 0 5% 0;
+    line-height: 1.5;
+    // background-color: $background-color;
+    p{
+        margin: 0;
+    }
+}

@@ -1,0 +1,30 @@
+@import "Utils/variables";
+@import "Utils/mixins";
+@import "Utils/keyframes";
+
+* {
+    box-sizing: border-box;
+    
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.25;
+    background-color: $background-color;
+    color: $text-color;
+    h2 {
+        margin: .75em 0;
+    }
+}
+
+#about, #skills, #contact, #projects {
+    padding: 3em 0;
+}
+
+.hide {
+    display: none;
+}

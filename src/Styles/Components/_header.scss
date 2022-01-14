@@ -1,0 +1,58 @@
+@import "../Utils/variables";
+@import "../Utils/mixins";
+@import "../Utils/keyframes";
+
+.header {
+    padding: 0 5% 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    // font-size: 1.25em;
+    #title {
+        font-size: 3em;
+        margin: 0;
+        margin-top: 0.5em;
+    }
+    #title-desc {
+        display: block;
+        font-size: .5em;
+        margin-top: .5em;
+    }
+    .scroll-down {
+        width: 100%;
+        margin: 0;
+        padding-bottom: .5em;
+        text-align: center;
+        font-weight: 300;
+        align-self: center;
+        animation: fade-in-out 2s infinite alternate;
+        grid-area: scroll;
+    }
+
+    @include breakpoint($small) {
+        font-size: 1.5em;
+    }
+    @include breakpoint($large) {
+        font-size: 2em;
+        background: linear-gradient(90deg, $background-color 50%, $text-color 50%);
+        display: grid;
+        grid-template-columns: 50% 50%;
+        align-items: center;
+        grid-template-areas: ". ."
+                             "scroll scroll";
+        #title {
+            font-size: 2.8em;
+            margin: 0;
+        }
+        #title-desc {
+
+        }
+        .scroll-down {
+            align-self: end;
+            span {
+                color: black;
+            }
+        }
+    }
+}

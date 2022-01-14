@@ -1,0 +1,43 @@
+@import "../Utils/variables";
+@import "../Utils/mixins";
+@import "../Utils/keyframes";
+
+.nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    // font-size: 1.25em;
+    font-weight: 400;
+    li {
+        padding: .5em;
+        margin: .5em 0;
+        border: 2px solid $text-color;
+        border-radius: 10px;
+        min-width: 85%;
+        text-align: center;
+        transition: .15s ease-in;
+        &:hover {
+            background-color: rgba($text-color, .3);
+            cursor: pointer;
+        }
+    }
+    a {
+        text-decoration: none;
+        color: $text-color;
+    }
+    @include breakpoint($large) {
+        color: $background-color;
+        margin: 0;
+        li {
+            border-color: $background-color;
+            &:hover {
+                background-color: rgba($background-color, .3);
+            }
+        }
+        a {
+            color: $background-color;
+        }
+    }
+}
