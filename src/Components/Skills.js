@@ -3,10 +3,11 @@ import SkillsIcon from './SkillsIcons';
 
 function Skills({ skills }) {
 
+    const cardBreak = 400;
     const [index, setIndex] = useState(0);
     const [isAnimating, setAnimating] = useState(false);
     const [canAnimate, setCanAnimate] = useState(true);
-    const [iconsDisplayed, setIconsDisplayed] = useState(window.innerWidth > 400 ? Math.floor(window.innerWidth / 400) : 1);
+    const [iconsDisplayed, setIconsDisplayed] = useState(window.innerWidth > cardBreak ? Math.floor(window.innerWidth / cardBreak) : 1);
     const [windowSize, setWindowSize] = useState(window.innerWidth);
 
     useEffect(() => {
@@ -19,8 +20,8 @@ function Skills({ skills }) {
 
     useEffect(() => {
         function updateIcons() {
-            if (window.innerWidth > 400) {
-                setIconsDisplayed(Math.floor(window.innerWidth / 400));
+            if (window.innerWidth > cardBreak) {
+                setIconsDisplayed(Math.floor(window.innerWidth / cardBreak));
             }
             else {
                 setIconsDisplayed(1);
@@ -86,7 +87,7 @@ function Skills({ skills }) {
     )
 
     return (
-        <div className="skills">
+        <div id="skills">
             <h2 className="skills-title">Skills</h2>
             <div className="skills-icons-container">
                 <div className={`skills-icons ${isAnimating ? 'animating' : ''}`} onClick={startAnimation} onAnimationEnd={handleRotation}>

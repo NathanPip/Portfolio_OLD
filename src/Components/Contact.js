@@ -39,8 +39,8 @@ function Contact() {
   };
 
   return (
-    <div className="contact">
-      <h1 className="contact-form-title">Contact</h1>
+    <div id="contact">
+      <h2 className="contact-form-title">Contact</h2>
       <div className="contact-body">
         <form ref={form} className="contact-form" onSubmit={handleSubmit}>
           <label htmlFor="name">Name: </label>
@@ -54,7 +54,7 @@ function Contact() {
 
           <button type="submit">{submitStatus ? "Sent!" : "Submit"}</button>
         </form>
-        <div className="contact-aside">
+        <div className="contact-aside hide-sm">
         </div>
       </div>
     </div>

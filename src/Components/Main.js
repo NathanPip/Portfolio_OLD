@@ -7,10 +7,9 @@ import Contact from './Contact';
 function Main({skills}) {
     return (
         <div className="main">
-            <About />
             <Skills skills={skills}/>
-            <h2 className="projects-title">Projects</h2>
             <Projects />
+            <About />
             <Contact />
         </div>
     );

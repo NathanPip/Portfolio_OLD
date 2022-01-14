@@ -1,9 +1,7 @@
 /* fonts */
 @use "sass:map";
 @use "sass:list";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Nunito:ital,wght@0,300;0,600;1,300;1,600&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Work+Sans:ital,wght@0,300;0,700;1,300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&family=Montserrat:wght@400;500;700&family=Nunito:ital,wght@0,300;0,600;1,300;1,600&family=Poppins:ital,wght@0,300;0,400;0,500;1,400&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Work+Sans:ital,wght@0,300;0,700;1,300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap');
 //colors
 $background-color: black;
 $text-color: white;
@@ -40,66 +38,100 @@ $extra-large: 1400px;
     }
 }
 
+@mixin cardSize($size) {
+    width: $size;
+    height: 1.4*$size;
+}
 
 * {
     box-sizing: border-box;
+    
+}
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    // font-family: 'Montserrat', sans-serif;
-    // font-family: 'Nunito', sans-serif;
-    // font-family: 'Source Sans Pro', sans-serif;
-    // font-family: 'Work Sans', sans-serif;
-    font-family: 'Arimo', sans-serif;
-    font-family: 'Montserrat', sans-serif;
-    font-family: 'Nunito', sans-serif;
-    font-family: 'Poppins', sans-serif;
-    font-family: 'Source Sans Pro', sans-serif;
     font-family: 'Work Sans', sans-serif;
     font-size: 1.5rem;
     line-height: 1.25;
     background-color: $background-color;
     color: $text-color;
+    h2 {
+        margin: .75em 0;
+    }
+}
+
+#about, #skills, #contact, #projects {
+    padding: 3em 0;
 }
 
 .hide {
     display: none;
 }
 
-#root {
-    margin-bottom: 2em;
-}
+// .hide-sm {
+//     display: none;
+// }
 
 .header {
     padding: 0 5% 0;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    // font-size: 1.25em;
     #title {
-        font-size: 3em;   
+        font-size: 3em;
+        margin: 0;
+        margin-top: 0.5em;
     }
     #title-desc {
         display: block;
         font-size: .5em;
         margin-top: .5em;
     }
+    .scroll-down {
+        width: 100%;
+        margin: 0;
+        padding-bottom: .5em;
+        text-align: center;
+        font-weight: 300;
+        align-self: center;
+        animation: fade-in-out 2s infinite alternate;
+        grid-area: scroll;
+    }
+
     @include breakpoint($small) {
         font-size: 1.5em;
     }
-    
     @include breakpoint($large) {
         font-size: 2em;
+        background: linear-gradient(90deg, $background-color 50%, $text-color 50%);
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 50% 50%;
         align-items: center;
-        min-height: 100vh;
-
+        grid-template-areas: ". ."
+                             "scroll scroll";
         #title {
-            font-size: 3.5em;
+            font-size: 2.8em;
+            margin: 0;
         }
         #title-desc {
 
         }
+        .scroll-down {
+            align-self: end;
+            span {
+                color: black;
+            }
+        }
     }
+}
+
+.main {
+    background-color: $background-color;
+    padding-bottom: 2rem;
 }
 
 .nav {
@@ -108,12 +140,14 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 0;
+    // font-size: 1.25em;
+    font-weight: 400;
     li {
-        padding: .5em 0;
+        padding: .5em;
         margin: .5em 0;
         border: 2px solid $text-color;
         border-radius: 10px;
-        width: 50%;
+        min-width: 85%;
         text-align: center;
         transition: .15s ease-in;
         &:hover {
@@ -121,28 +155,47 @@ body {
             cursor: pointer;
         }
     }
-    // li:nth-of-type(2n) {
-    //     align-self: end;
-    // }
+    a {
+        text-decoration: none;
+        color: $text-color;
+    }
+    @include breakpoint($large) {
+        color: $background-color;
+        margin: 0;
+        li {
+            border-color: $background-color;
+            &:hover {
+                background-color: rgba($background-color, .3);
+            }
+        }
+        a {
+            color: $background-color;
+        }
+    }
 }
 
-.about {
+#about {
     padding: 0 5% 0;
     line-height: 1.5;
+    // background-color: $background-color;
+    p{
+        margin: 0;
+    }
 }
 
-.skills {
+#skills {
     margin: 0 auto;
     width: 90%;
     display: flex;
     flex-direction: column;
     overflow: hidden;
+
     .skills-title {
-        margin-bottom: .5em;
+        padding: 1em 0;
     }
     .skills-icons-container {
         width: 200%;
-        height: 450px;
+        // height: 450px;
         display: flex;
         justify-content: space-around;
     }
@@ -157,8 +210,7 @@ body {
     }
     .icon-full {
         // margin: 0 auto;
-        width: 320px;
-        height: 90%;
+        @include cardSize(320px);
         background-color: $text-color;
         color: $background-color;
         display: flex;
@@ -231,13 +283,12 @@ body {
     padding: 0 5% 0;
 }
 
-.projects {
+#projects {
     width: 100%;
     margin-bottom: 2em;
-    padding: 0 5% 0;
+    // padding: 0 5% 0;
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    flex-direction: column;
     .project-card {
         display: flex;
         flex-direction: column;
@@ -259,7 +310,7 @@ body {
     }
 }
 
-.contact {
+#contact {
     display: flex;
     flex-direction: column;
     padding: 0 5% 0;
@@ -267,7 +318,7 @@ body {
         display: flex;
         flex-direction: column;
         flex-grow: 1;
-        padding-right: 3em;
+        // padding-right: 3em;
     }
     .contact-aside {
         flex-grow: 1;
@@ -310,6 +361,15 @@ body {
 @keyframes fade-in {
     0% {
         opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-in-out {
+    0% {
+        opacity: .2;
     }
     100% {
         opacity: 1;
