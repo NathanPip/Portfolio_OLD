@@ -13,7 +13,7 @@ function Skills({ skills }) {
     useEffect(() => {
         const interval = setInterval(() => {
             if (canAnimate)
-                startAnimation();
+                startStopAnimation(true);
         }, 4000);
         return () => clearInterval(interval);
     }, [index, canAnimate]);
@@ -38,17 +38,9 @@ function Skills({ skills }) {
         return num;
     }
 
-    function startAnimation() {
-        setAnimating(true);
-    }
-
-    function onAnimationEnd() {
-        setAnimating(false);
-        setCanAnimate(true);
-    }
-
     function startStopAnimation(toggle) {
         toggle ? setAnimating(true) : setAnimating(false);
+        setCanAnimate(true)
     }
     function toggleAnimation(toggle) {
         setCanAnimate(toggle);
@@ -90,10 +82,10 @@ function Skills({ skills }) {
         <div id="skills">
             <h2 className="skills-title">Skills</h2>
             <div className="skills-icons-container">
-                <div className={`skills-icons ${isAnimating ? 'animating' : ''}`} onClick={startAnimation} onAnimationEnd={handleRotation}>
+                <div className={`skills-icons ${isAnimating ? 'animating' : ''}`} onAnimationEnd={handleRotation}>
                     {handleDisplayedIcons(true)}
                 </div>
-                <div className={`skills-icons ${isAnimating ? 'animating' : ''}`} onClick={startAnimation} onAnimationEnd={onAnimationEnd}>
+                <div className={`skills-icons ${isAnimating ? 'animating' : ''}`} onAnimationEnd={()=>startStopAnimation(false)}>
                     {handleDisplayedIcons(false)}
                 </div>
             </div>
