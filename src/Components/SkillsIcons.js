@@ -1,28 +1,35 @@
-import React from 'react'
+import React from "react";
 
-function SkillsIcon({ skill, animating, current, mouseEnter, mouseLeave }) {
+function SkillsIcon({
+  skill,
+  animating,
+  current,
+  mouseEnter,
+  mouseLeave,
+  isModal,
+  toggleModal
+}) {
 
 
-    const desktopTemplate = (
-        <div className="icon" id={skill.id}>
-            <img src={skill.src} alt={skill.id} />
+
+
+    return (
+      <div
+        className={`icon-full`}
+        id={skill.id}
+        onMouseEnter={mouseEnter}
+        onMouseLeave={mouseLeave}
+        onClick={!isModal ? ()=>toggleModal(true, skill) : null}
+      >
+        <div className="icon-img">
+          <img src={skill.src} alt={skill.id} />
+          <button className={`close ${!isModal ? 'hide' : ''}`} onClick={()=>toggleModal(false, skill)}>✖</button>
         </div>
-
-    )
-    const mobileTemplate = (
-        <div className={`icon-full`} id={skill.id} onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
-            <div className="icon-img">
-                <img src={skill.src} alt={skill.id} />
-            </div>
-            <h3> {skill.title} </h3>
-            <p>{skill.desc}</p>
-        </div>
-    )
-
-
-    return mobileTemplate;
+        <h3> {skill.title} </h3>
+        <p>{skill.desc}</p>
+        <a className={`view-projects ${!isModal ? 'hide' : ''}`} href="#projects" onClick={()=>toggleModal(false, skill)}>view projects</a>
+      </div>
+    );
 }
-
-
 
 export default SkillsIcon;
