@@ -65,7 +65,7 @@
             bottom: 5%;
         }
 
-        &:hover {
+        &.hover:hover {
             transform: scale(1.08);
             box-shadow: 0px 0px 15px 0px $text-color;
             cursor: pointer;

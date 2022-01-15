@@ -1,0 +1,65 @@
+@import "../Utils/variables";
+@import "../Utils/mixins";
+@import "../Utils/keyframes";
+
+#skills-modal {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    inset: 0;
+    background-color: rgba($background-color, .2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    &.hide {
+        display: none;
+    }
+    .icon-full {
+        @include cardSize(600px);
+        font-size: 1.5em;
+        .icon-img {
+            justify-content: space-between;
+            img {
+                @include img-size(200px);
+                align-self: center;
+            }
+        }
+        // border: 3px solid black;
+    }
+    button {
+        height: 1em;
+        width: 1em;
+        background-color: transparent;
+        border: none;
+        margin: .5em .75em;
+        opacity: .8;
+        &:hover {
+            cursor: pointer;
+            opacity: 1;
+        }
+    }
+    .invisible {
+        margin: .5em .75em;
+        height: 1em;
+        width: 1em;
+    }
+    .view-projects {
+        text-decoration: none;
+        color: $background-color;
+        margin-top: auto;
+        margin-bottom: .5em;
+        font-weight: 300;
+        animation: fade-in-out 1s infinite alternate;
+        span{
+            display:block;
+            text-align: center;
+        }
+    }
+    &.fade-in {
+        animation: slide-in 500ms 1 forwards;
+    }
+    &.fade-out {
+        animation: slide-out 500ms forwards;
+    }
+}

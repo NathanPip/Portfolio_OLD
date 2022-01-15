@@ -6,8 +6,9 @@ function Skills({ skills }) {
   const cardBreak = 400;
   const [index, setIndex] = useState(0);
   const [isAnimating, setAnimating] = useState(false);
+  const [modalHiding, setModalHiding] = useState(true);
   const [canAnimate, setCanAnimate] = useState(true);
-  const [displaySkillsModal, setDisplaySkillsModal] = useState(false);
+  const [modalDisplayed, setModalDisplayed] = useState(false);
   const [modalSkill, setModalSkill] = useState(skills[0])
   const [iconsDisplayed, setIconsDisplayed] = useState(
     window.innerWidth > cardBreak
@@ -17,10 +18,11 @@ function Skills({ skills }) {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      if (canAnimate) startStopAnimation(true);
+      if (canAnimate && !modalDisplayed) startStopAnimation(true);
     }, 4000);
+    console.log(modalDisplayed);
     return () => clearInterval(interval);
-  }, [index, canAnimate]);
+  }, [index, canAnimate, modalDisplayed]);
 
   useEffect(() => {
     function updateIcons() {
@@ -33,6 +35,13 @@ function Skills({ skills }) {
     window.addEventListener("resize", updateIcons);
     return () => window.removeEventListener("resize", updateIcons);
   }, []);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if(!modalDisplayed)
+        setModalHiding(true)
+    }, 500)
+  },[modalDisplayed]);
 
   const incrementIndex = (num) => {
     num += iconsDisplayed;
@@ -56,12 +65,6 @@ function Skills({ skills }) {
     setIndex((prevIndex) => incrementIndex(prevIndex));
   };
 
-  const displayModalSkill = (isDisplayed, skill) => {
-      setDisplaySkillsModal(isDisplayed)
-      setModalSkill(skill)
-      console.log(isDisplayed)
-  }
-
   const handleDisplayedIcons = (isCurrent) => {
     let skillsArr = [];
     let num;
@@ -78,17 +81,30 @@ function Skills({ skills }) {
             mouseEnter={() => toggleAnimation(false)}
             mouseLeave={() => toggleAnimation(true)}
             isModal={false}
-            toggleModal={displayModalSkill}
+            displayModal={displayModal}
+            canHover={true}
           />
         );
       }
       return skillsArr;
   };
 
+
+  const displayModal = (skill) => {
+    setModalDisplayed(true)
+    setModalHiding(false)
+    setModalSkill(skill)
+}
+
+const closeModal = () => {
+  setModalDisplayed(false)
+  setCanAnimate(true)
+}
+
   return (
     <div id="skills">
+      <SkillsModal skill={modalSkill} isDisplayed={modalDisplayed} exitModal={closeModal} hiding={modalHiding} setHiding={setModalHiding}/>
       <h2 className="skills-title">Skills</h2>
-      <SkillsModal skill={modalSkill} isDisplayed={displaySkillsModal} exitModal={displayModalSkill}/>
       <div className="skills-icons-container">
         <div
           className={`skills-icons ${isAnimating ? "animating" : ""}`}

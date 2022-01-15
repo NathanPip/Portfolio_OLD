@@ -1,15 +1,15 @@
 @import "variables";
 
 @mixin img-size($size) {
-    width: $size;
-    height: $size;
+    min-width: $size;
+    min-height: $size;
 }
 
 @mixin icon-full-color($color) {
     .icon-img{
         background-color: $color;
     }
-    &:hover {
+    &.hover:hover {
         border: 1px solid $color;
         box-shadow: 0px 0px 5px 3px $color; 
     }
@@ -24,4 +24,6 @@
 @mixin cardSize($size) {
     width: $size;
     height: 1.4*$size;
+    max-width: 90vw;
+    max-height: 80vh;
 }

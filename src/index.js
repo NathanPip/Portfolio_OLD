@@ -9,25 +9,25 @@ const SKILLS_DATA = [
   {
     id: "html",
     title: "HTML",
-    src: "https://img.icons8.com/ios/100/000000/html-5--v2.png",
+    src: "https://img.icons8.com/ios/250/000000/html-5--v2.png",
     desc: "lorem ipsumn joeasnoidnpa fsdionf sdf iosd908wejrnj 90jnjdhshnf 9ijaIEWHJJNFIJNSDHJB FIOSNDF SDNFJS PL NJDHSFCBGUF DS"
   },
   {
     id: "css",
     title: "CSS",
-    src: "https://img.icons8.com/ios/100/000000/css.png",
+    src: "https://img.icons8.com/ios/250/000000/css3.png",
     desc: "lorem ipsumn joeasnoidnpa fsdionf sdf iosd908wejrnj 90jnjdhshnf 9ijaIEWHJJNFIJNSDHJB FIOSNDF SDNFJS PL NJDHSFCBGUF DS"
   },
   {
     id: "js",
     title: "Javascript",
-    src: "https://img.icons8.com/ios/100/000000/javascript--v1.png",
+    src: "https://img.icons8.com/ios/250/000000/javascript--v1.png",
     desc: "lorem ipsumn joeasnoidnpa fsdionf sdf iosd908wejrnj 90jnjdhshnf 9ijaIEWHJJNFIJNSDHJB FIOSNDF SDNFJS PL NJDHSFCBGUF DS"
   },
   {
     id: "react",
     title: "React",
-    src: "https://img.icons8.com/ios-glyphs/120/000000/react.png",
+    src: "https://img.icons8.com/wired/256/000000/react.png",
     desc: "lorem ipsumn joeasnoidnpa fsdionf sdf iosd908wejrnj 90jnjdhshnf 9ijaIEWHJJNFIJNSDHJB FIOSNDF SDNFJS PL NJDHSFCBGUF DS"
   }
 ];
