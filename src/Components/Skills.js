@@ -9,13 +9,13 @@ function Skills({ skills }) {
   const [modalHiding, setModalHiding] = useState(true);
   const [canAnimate, setCanAnimate] = useState(true);
   const [modalDisplayed, setModalDisplayed] = useState(false);
-  const [modalSkill, setModalSkill] = useState(skills[0])
+  const [modalSkill, setModalSkill] = useState(skills[0]);
   const [iconsDisplayed, setIconsDisplayed] = useState(
     window.innerWidth > cardBreak
       ? Math.floor(window.innerWidth / cardBreak)
       : 1
   );
-
+  //interval for rotating skills {set to every 4 seconds}
   useEffect(() => {
     const interval = setInterval(() => {
       if (canAnimate && !modalDisplayed) startStopAnimation(true);
@@ -24,6 +24,7 @@ function Skills({ skills }) {
     return () => clearInterval(interval);
   }, [index, canAnimate, modalDisplayed]);
 
+  //event listener for window resizing
   useEffect(() => {
     function updateIcons() {
       if (window.innerWidth > cardBreak) {
@@ -36,74 +37,89 @@ function Skills({ skills }) {
     return () => window.removeEventListener("resize", updateIcons);
   }, []);
 
+  //timeout function for modal animation ending so modal is not set to hide before animation finsishes
   useEffect(() => {
     const timeout = setTimeout(() => {
-      if(!modalDisplayed)
-        setModalHiding(true)
-    }, 500)
-  },[modalDisplayed]);
+      if (!modalDisplayed) setModalHiding(true);
+    }, 500);
+  }, [modalDisplayed]);
 
-  const incrementIndex = (num) => {
+  //Skill Icons Functions
+
+  //increments the index by number specified and return index within bounds
+  const incrementIndex = num => {
     num += iconsDisplayed;
     return handleIndex(num);
   };
 
-  const handleIndex = (num) => {
+  //handles index making sure no out of bounds errors occur
+  const handleIndex = num => {
     if (num > skills.length - 1) return num % skills.length;
     return num;
   };
 
-  const startStopAnimation = (toggle) => {
+  //toggles whether animation should start or stop
+  const startStopAnimation = toggle => {
     toggle ? setAnimating(true) : setAnimating(false);
     setCanAnimate(true);
   };
-  const toggleAnimation = (toggle) => {
+
+  //toggles whether element can animate
+  const toggleAnimation = toggle => {
     setCanAnimate(toggle);
   };
 
+  //sets new indices
   const handleRotation = () => {
-    setIndex((prevIndex) => incrementIndex(prevIndex));
+    setIndex(prevIndex => incrementIndex(prevIndex));
   };
 
-  const handleDisplayedIcons = (isCurrent) => {
+  //handles how many icons should be displayed and returns array of icons
+  const handleDisplayedIcons = isCurrent => {
     let skillsArr = [];
     let num;
-    if(isCurrent) {
-        num = index;
+    if (isCurrent) {
+      num = index;
     } else {
-        num = incrementIndex(index);
+      num = incrementIndex(index);
     }
-      for (let i = num; i < iconsDisplayed + num; i++) {
-        skillsArr.push(
-          <SkillsIcon
-            key={i.toString()}
-            skill={skills[handleIndex(i)]}
-            mouseEnter={() => toggleAnimation(false)}
-            mouseLeave={() => toggleAnimation(true)}
-            isModal={false}
-            displayModal={displayModal}
-            canHover={true}
-          />
-        );
-      }
-      return skillsArr;
+    for (let i = num; i < iconsDisplayed + num; i++) {
+      skillsArr.push(
+        <SkillsIcon
+          key={i.toString()}
+          skill={skills[handleIndex(i)]}
+          mouseEnter={() => toggleAnimation(false)}
+          mouseLeave={() => toggleAnimation(true)}
+          isModal={false}
+          displayModal={displayModal}
+          canHover={true}
+        />
+      );
+    }
+    return skillsArr;
   };
 
+  //sets display modal state properties and defines modal skill
+  const displayModal = skill => {
+    setModalDisplayed(true);
+    setModalHiding(false);
+    setModalSkill(skill);
+  };
 
-  const displayModal = (skill) => {
-    setModalDisplayed(true)
-    setModalHiding(false)
-    setModalSkill(skill)
-}
-
-const closeModal = () => {
-  setModalDisplayed(false)
-  setCanAnimate(true)
-}
+  //closes the modal
+  const closeModal = () => {
+    setModalDisplayed(false);
+    setCanAnimate(true);
+  };
 
   return (
     <div id="skills">
-      <SkillsModal skill={modalSkill} isDisplayed={modalDisplayed} exitModal={closeModal} hiding={modalHiding} setHiding={setModalHiding}/>
+      <SkillsModal
+        skill={modalSkill}
+        isDisplayed={modalDisplayed}
+        exitModal={closeModal}
+        hiding={modalHiding}
+      />
       <h2 className="skills-title">Skills</h2>
       <div className="skills-icons-container">
         <div

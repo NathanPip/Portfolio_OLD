@@ -49,9 +49,9 @@
         color: $background-color;
         margin-top: auto;
         margin-bottom: .5em;
-        font-weight: 300;
-        animation: fade-in-out 1s infinite alternate;
+        font-weight: 400;
         span{
+            animation: bounce 1s infinite alternate;
             display:block;
             text-align: center;
         }

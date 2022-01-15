@@ -1,8 +1,8 @@
 @import "variables";
 
 @mixin img-size($size) {
-    min-width: $size;
-    min-height: $size;
+    width: $size;
+    height: $size;
 }
 
 @mixin icon-full-color($color) {
@@ -24,6 +24,6 @@
 @mixin cardSize($size) {
     width: $size;
     height: 1.4*$size;
-    max-width: 90vw;
-    max-height: 80vh;
+    max-width: 90%;
+    // max-height: 90%;
 }

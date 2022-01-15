@@ -43,6 +43,14 @@
     transform: translateY(-100%);
   }
 }
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
 * {
   box-sizing: border-box;
 }
@@ -111,6 +119,14 @@ body h2 {
   }
   100% {
     transform: translateY(-100%);
+  }
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(10px);
   }
 }
 .header {
@@ -209,6 +225,14 @@ body h2 {
     transform: translateY(-100%);
   }
 }
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
 .main {
   background-color: black;
   padding-bottom: 2rem;
@@ -255,6 +279,14 @@ body h2 {
   }
   100% {
     transform: translateY(-100%);
+  }
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(10px);
   }
 }
 .nav {
@@ -341,6 +373,14 @@ body h2 {
     transform: translateY(-100%);
   }
 }
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
 #about {
   padding: 0 5% 0;
   line-height: 1.5;
@@ -392,6 +432,14 @@ body h2 {
     transform: translateY(-100%);
   }
 }
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
 #skills {
   margin: 0 auto;
   width: 90%;
@@ -416,10 +464,9 @@ body h2 {
   animation: 1s cubic-bezier(0.69, -0.08, 0.47, 0.99) slide;
 }
 #skills .icon-full {
-  width: 320px;
-  height: 448px;
-  max-width: 90vw;
-  max-height: 80vh;
+  width: 13em;
+  height: 18.2em;
+  max-width: 90%;
   background-color: white;
   color: black;
   display: flex;
@@ -436,15 +483,18 @@ body h2 {
   height: 33%;
 }
 #skills .icon-full .icon-img img {
-  min-width: 100px;
-  min-height: 100px;
+  align-self: center;
+  width: 4.75em;
+  height: 4.75em;
 }
 #skills .icon-full p {
   font-size: 0.9em;
+  font-weight: 300;
   padding: 0.2em 0;
   text-align: center;
 }
 #skills .icon-full h3 {
+  font-weight: 500;
   margin-top: 0.3em;
   margin-bottom: 0.75em;
 }
@@ -543,6 +593,14 @@ body h2 {
     transform: translateY(-100%);
   }
 }
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(10px);
+  }
+}
 #skills-modal {
   width: 100vw;
   height: 100vh;
@@ -560,16 +618,15 @@ body h2 {
 #skills-modal .icon-full {
   width: 600px;
   height: 840px;
-  max-width: 90vw;
-  max-height: 80vh;
+  max-width: 90%;
   font-size: 1.5em;
 }
 #skills-modal .icon-full .icon-img {
   justify-content: space-between;
 }
 #skills-modal .icon-full .icon-img img {
-  min-width: 200px;
-  min-height: 200px;
+  width: 200px;
+  height: 200px;
   align-self: center;
 }
 #skills-modal button {
@@ -594,10 +651,10 @@ body h2 {
   color: black;
   margin-top: auto;
   margin-bottom: 0.5em;
-  font-weight: 300;
-  animation: fade-in-out 1s infinite alternate;
+  font-weight: 400;
 }
 #skills-modal .view-projects span {
+  animation: bounce 1s infinite alternate;
   display: block;
   text-align: center;
 }
@@ -649,6 +706,14 @@ body h2 {
   }
   100% {
     transform: translateY(-100%);
+  }
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(10px);
   }
 }
 #projects {
@@ -721,6 +786,14 @@ body h2 {
   }
   100% {
     transform: translateY(-100%);
+  }
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(10px);
   }
 }
 #contact {
