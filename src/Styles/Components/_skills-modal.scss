@@ -57,10 +57,10 @@
         }
     }
     &.fade-in {
-        animation: slide-in 500ms 1 forwards;
+        animation: slide-in 500ms ease-in-out 1 forwards;
     }
     &.fade-out {
-        animation: slide-out 500ms forwards;
+        animation: slide-out 500ms ease-in-out forwards;
     }
     @media (max-width: $medium) {
         display: none;
