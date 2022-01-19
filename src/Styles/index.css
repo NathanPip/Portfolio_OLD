@@ -187,6 +187,7 @@ body h2 {
   font-size: 3em;
   font-weight: 400;
   margin: 0;
+  margin-top: 0.25em;
   border-top: 2px solid #222121;
   border-right: 2px solid #222121;
   padding-bottom: 0.25em;
@@ -206,9 +207,9 @@ body h2 {
   animation: fade-in-out 2s infinite alternate;
   grid-area: scroll;
 }
-@media (min-width: 490px) {
+@media (min-width: 760px) {
   .header {
-    font-size: 1.5em;
+    font-size: 1.25em;
   }
 }
 @media (min-width: 1050px) {
@@ -222,12 +223,10 @@ body h2 {
   }
   .header #title {
     font-size: 3em;
+    margin-top: 0;
   }
   .header .scroll-down {
     align-self: end;
-  }
-  .header a {
-    font-size: 1em;
   }
 }
 @media (min-width: 1400px) {
@@ -642,7 +641,7 @@ body h2 {
 #skills .skills-right:hover {
   cursor: pointer;
 }
-@media (min-width: 790px) {
+@media (min-width: 760px) {
   #skills .skills-left,
 #skills .skills-right {
     display: inline-block;
@@ -870,7 +869,7 @@ body h2 {
 #skills-modal.fade-out {
   animation: slide-out 500ms ease-in-out forwards;
 }
-@media (max-width: 790px) {
+@media (max-width: 760px) {
   #skills-modal {
     display: none;
   }
@@ -961,7 +960,6 @@ body h2 {
 #projects .project-card {
   display: flex;
   flex-direction: column;
-  width: 320px;
   padding: 1em;
   margin: 0 auto;
   background: #ebe7e3;
