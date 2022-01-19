@@ -29,6 +29,12 @@ const SKILLS_DATA = [
     title: "React",
     src: "https://img.icons8.com/wired/256/000000/react.png",
     desc: "lorem ipsumn joeasnoidnpa fsdionf sdf iosd908wejrnj 90jnjdhshnf 9ijaIEWHJJNFIJNSDHJB FIOSNDF SDNFJS PL NJDHSFCBGUF DS"
+  },
+  {
+    id: "sass",
+    title: "Sass",
+    src: "https://img.icons8.com/ios-filled/250/000000/sass.png",
+    desc: "lorem ipsumn joeasnoidnpa fsdionf sdf iosd908wejrnj 90jnjdhshnf 9ijaIEWHJJNFIJNSDHJB FIOSNDF SDNFJS PL NJDHSFCBGUF DS"
   }
 ];
 

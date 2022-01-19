@@ -3,30 +3,79 @@
 @import "../Utils/keyframes";
 
 #skills {
-    margin: 0 auto;
-    width: 90%;
+    // margin: 0 auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     overflow: hidden;
+    background-color: $text-color;
+    color: $background-color;
 
     .skills-title {
-        padding: 1em 0;
+        padding: 0 1em;
+        font-size: 3em;
+        width: 100%;
+        flex-basis: 100%;
+    }
+    .full-skills-container {
+        display: flex;
+        background: $background-color;
+        align-items: center;
+        width: 100%;
+    }
+    .skills-container {
+        width: 90%;
+        margin: 0 auto;
+        overflow-x: hidden;
     }
     .skills-icons-container {
         width: 200%;
-        // height: 450px;
+        min-height: 600px;
         display: flex;
         justify-content: space-around;
+        background: $background-color;
     }
 
     .skills-icons {
         width: 100%;
         display: flex;
         justify-content: space-around;
+        align-items: center;
         &.animating {
-            animation: 1s cubic-bezier(.69,-0.08,.47,.99) slide;
+            &.right, &.right-current{
+            animation: 1s cubic-bezier(.69,-0.08,.47,.99) slide-right;
+            }
+            &.left {
+                animation: 1s cubic-bezier(.69,-0.08,.47,.99) slide-left;
+            }
+            &.left-current {
+                animation: 1s cubic-bezier(.69,-0.08,.47,.99) slide-left-current;
+            }
         }
     }
+
+    .skills-left, .skills-right {
+        display: none;
+        color: $text-color;
+        background: transparent;
+        border: none;
+        font-size: 2em;
+        // width: 5%;
+        max-width: 5%;
+        margin: 0 .25em;
+        align-self: center;
+        margin: 0 auto;
+        &:hover {
+            font-size: 2.1em;
+            cursor: pointer;
+        }
+        @include breakpoint($small) {
+            display: inline-block;
+        }
+    }
+
+
     .icon-full {
         // margin: 0 auto;
         @include cardSize(13em);
@@ -37,11 +86,13 @@
         align-items: center;
         border-radius: 1.5em;
         transition: .5s ease-in;
+        // border: 2px solid black;
         .icon-img {
             border-radius: 1.5em 1.5em 0 0;
+            min-width: 100%;
             display: flex;
             justify-content: center;
-            border-bottom: 3px solid $background-color;
+            border-bottom: 2px solid $background-color;
             height: 33%;
             img {
                 align-self: center;
@@ -52,7 +103,7 @@
         p{
             font-size: .9em;
             font-weight: 300;
-            padding: .2em 0;
+            padding: .2em .3em;
             text-align: center;
         }
 
@@ -85,6 +136,9 @@
     }
     #react {
         @include icon-full-color($react-color);
+    }
+    #sass {
+        @include icon-full-color($sass-color);
     }
     .icon-img{
         margin: 0 auto;

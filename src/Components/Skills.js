@@ -6,8 +6,9 @@ function Skills({ skills }) {
   const cardBreak = 400;
   const [index, setIndex] = useState(0);
   const [isAnimating, setAnimating] = useState(false);
-  const [modalHiding, setModalHiding] = useState(true);
   const [canAnimate, setCanAnimate] = useState(true);
+  const [animationDirection, setAnimationDirection] = useState("right");
+  const [modalHiding, setModalHiding] = useState(true);
   const [modalDisplayed, setModalDisplayed] = useState(false);
   const [modalSkill, setModalSkill] = useState(skills[0]);
   const [iconsDisplayed, setIconsDisplayed] = useState(
@@ -18,9 +19,8 @@ function Skills({ skills }) {
   //interval for rotating skills {set to every 4 seconds}
   useEffect(() => {
     const interval = setInterval(() => {
-      if (canAnimate && !modalDisplayed) startStopAnimation(true);
+      if (canAnimate && !modalDisplayed) startStopAnimation(true, "right");
     }, 4000);
-    console.log(modalDisplayed);
     return () => clearInterval(interval);
   }, [index, canAnimate, modalDisplayed]);
 
@@ -47,21 +47,23 @@ function Skills({ skills }) {
   //Skill Icons Functions
 
   //increments the index by number specified and return index within bounds
-  const incrementIndex = num => {
-    num += iconsDisplayed;
+  const incrementDecrementIndex = (num, delta) => {
+    num += iconsDisplayed * delta;
     return handleIndex(num);
   };
 
   //handles index making sure no out of bounds errors occur
   const handleIndex = num => {
     if (num > skills.length - 1) return num % skills.length;
+    if (num < 0) return skills.length + num%skills.length;
     return num;
   };
 
   //toggles whether animation should start or stop
-  const startStopAnimation = toggle => {
+  const startStopAnimation = (toggle, direction) => {
     toggle ? setAnimating(true) : setAnimating(false);
     setCanAnimate(true);
+    setAnimationDirection(direction);
   };
 
   //toggles whether element can animate
@@ -70,18 +72,20 @@ function Skills({ skills }) {
   };
 
   //sets new indices
-  const handleRotation = () => {
-    setIndex(prevIndex => incrementIndex(prevIndex));
+  const handleRotation = (delta) => {
+    setIndex(prevIndex => incrementDecrementIndex(prevIndex, delta));
   };
 
   //handles how many icons should be displayed and returns array of icons
-  const handleDisplayedIcons = isCurrent => {
+  const handleDisplayedIcons = (isCurrent, direction) => {
     let skillsArr = [];
     let num;
     if (isCurrent) {
       num = index;
-    } else {
-      num = incrementIndex(index);
+    } else if(!isCurrent && direction === "right") {
+      num = incrementDecrementIndex(index, 1);
+    } else if (!isCurrent && direction === "left") {
+      num = incrementDecrementIndex(index, -1);
     }
     for (let i = num; i < iconsDisplayed + num; i++) {
       skillsArr.push(
@@ -121,19 +125,25 @@ function Skills({ skills }) {
         hiding={modalHiding}
       />
       <h2 className="skills-title">Skills</h2>
-      <div className="skills-icons-container">
-        <div
-          className={`skills-icons ${isAnimating ? "animating" : ""}`}
-          onAnimationEnd={handleRotation}
-        >
-          {handleDisplayedIcons(true)}
+      <div className="full-skills-container">
+        <button className="skills-left" onClick={()=>startStopAnimation(true, "left")}>🡠</button>
+        <div className="skills-container">
+          <div className="skills-icons-container">
+            <div
+              className={`skills-icons ${isAnimating ? "animating" : ""} ${animationDirection}-current`}
+              onAnimationEnd={()=> animationDirection === "right" ? handleRotation(1) : handleRotation(-1)}
+            >
+              {handleDisplayedIcons(true, animationDirection)}
+            </div>
+            <div
+              className={`skills-icons ${isAnimating ? "animating" : ""} ${animationDirection}`}
+              onAnimationEnd={() => startStopAnimation(false, animationDirection)}
+            >
+              {handleDisplayedIcons(false, animationDirection)}
+            </div>
+          </div>
         </div>
-        <div
-          className={`skills-icons ${isAnimating ? "animating" : ""}`}
-          onAnimationEnd={() => startStopAnimation(false)}
-        >
-          {handleDisplayedIcons(false)}
-        </div>
+        <button className="skills-right" onClick={()=>startStopAnimation(true, "right")}>🡢</button>
       </div>
     </div>
   );
