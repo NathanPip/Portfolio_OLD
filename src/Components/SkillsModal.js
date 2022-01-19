@@ -16,15 +16,17 @@ function SkillsModal({ skill, isDisplayed, exitModal, hiding }) {
             ✖
           </button>
         </div>
-        <h3> {skill.title} </h3>
-        <p>{skill.desc}</p>
-        <a
-          className={`view-projects`}
-          href="#projects"
-          onClick={() => exitModal()}
-        >
-          view projects<span>🡣</span>
-        </a>
+        <div className="icon-main">
+          <h3> {skill.title} </h3>
+          <p>{skill.desc}</p>
+          <a
+            className={`view-projects`}
+            href="#projects"
+            onClick={() => exitModal()}
+          >
+            view projects<span>🡣</span>
+          </a>
+        </div>
       </div>
     </div>
   );

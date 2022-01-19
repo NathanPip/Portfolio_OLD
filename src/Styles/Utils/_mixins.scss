@@ -6,12 +6,16 @@
 }
 
 @mixin icon-full-color($color) {
+    // box-shadow: 0px 10px 20px -5px $color;
     .icon-img{
         background-color: $color;
     }
     &.hover:hover {
-        border: 1px solid $color;
-        box-shadow: 0px 0px 5px 3px $color; 
+        // border: 1px solid $color;
+    box-shadow: 0px 20px 60px $color;
+    }
+    .icon-main {
+        // background: linear-gradient(180deg, $text-color, rgba($color, .1));
     }
 }
 
@@ -25,5 +29,5 @@
     width: $size;
     height: 1.4*$size;
     max-width: 90%;
-    // max-height: 90%;
+    max-height: 90%;
 }

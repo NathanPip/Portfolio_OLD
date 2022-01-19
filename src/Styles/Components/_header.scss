@@ -8,11 +8,13 @@
     flex-direction: column;
     justify-content: space-between;
     min-height: 100vh;
+    color: $background-color;
     // font-size: 1.25em;
     #title {
         font-size: 3em;
+        font-weight: 400;
         margin: 0;
-        margin-top: 0.5em;
+        // margin-top: 0.5em;
     }
     #title-desc {
         display: block;
@@ -34,25 +36,25 @@
         font-size: 1.5em;
     }
     @include breakpoint($large) {
-        font-size: 2em;
-        background: linear-gradient(90deg, $background-color 50%, $text-color 50%);
+        font-size: 1.65em;
+        background: $text-color;
         display: grid;
         grid-template-columns: 50% 50%;
         align-items: center;
         grid-template-areas: ". ."
                              "scroll scroll";
+        
         #title {
-            font-size: 2.8em;
-            margin: 0;
-        }
-        #title-desc {
-
+            font-size: 3em;
         }
         .scroll-down {
             align-self: end;
-            span {
-                color: black;
-            }
         }
+        a {
+            font-size: 1em;
+        }
+    }
+    @include breakpoint($extra-large) {
+        font-size: 2em;
     }
 }

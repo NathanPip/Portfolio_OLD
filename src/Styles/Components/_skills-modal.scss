@@ -62,4 +62,7 @@
     &.fade-out {
         animation: slide-out 500ms forwards;
     }
+    @media (max-width: $medium) {
+        display: none;
+    }
 }

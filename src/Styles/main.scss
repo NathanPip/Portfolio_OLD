@@ -4,12 +4,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap');
 
 //Components
-@import "misc";
+@import "general";
 @import "Components/header";
 @import "Components/main";
 @import "Components/nav";
 @import "Components/about";
 @import "Components/skills";
+@import "Components/skills-card";
 @import "Components/skills-modal";
 @import "Components/projects";
 @import "Components/contact";

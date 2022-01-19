@@ -4,10 +4,10 @@ function Nav() {
 
     return (
         <ul className="nav">
-            <li id="about-nav"><a href="#about">about</a></li>
-            <li id="skill-nav"><a href="#skills">skills</a></li>
-            <li id="project-nav"><a href="#projects">projects</a></li>
-            <li id="contact-nav"><a href="#contact">contact</a></li>
+            <a href="#about"><li id="about-nav">about</li></a>
+            <a href="#skills"><li id="skill-nav">skills</li></a>
+            <a href="#projects"><li id="project-nav">projects</li></a>
+            <a href="#contact"><li id="contact-nav">contact</li></a>
         </ul>
     )
 }

@@ -85,11 +85,13 @@ body {
   font-family: "Work Sans", sans-serif;
   font-size: 1.5rem;
   line-height: 1.25;
-  background-color: #313638;
-  color: #f7fff7;
+  background-color: #ebe7e3;
+  color: #222121;
 }
 body h2 {
   margin: 0.75em 0;
+  font-size: 1.5em;
+  font-weight: 500;
 }
 
 #about, #skills, #contact, #projects {
@@ -179,11 +181,12 @@ body h2 {
   flex-direction: column;
   justify-content: space-between;
   min-height: 100vh;
+  color: #222121;
 }
 .header #title {
   font-size: 3em;
+  font-weight: 400;
   margin: 0;
-  margin-top: 0.5em;
 }
 .header #title-desc {
   display: block;
@@ -207,22 +210,26 @@ body h2 {
 }
 @media (min-width: 1050px) {
   .header {
-    font-size: 2em;
-    background: linear-gradient(90deg, #313638 50%, #f7fff7 50%);
+    font-size: 1.65em;
+    background: #ebe7e3;
     display: grid;
     grid-template-columns: 50% 50%;
     align-items: center;
     grid-template-areas: ". ." "scroll scroll";
   }
   .header #title {
-    font-size: 2.8em;
-    margin: 0;
+    font-size: 3em;
   }
   .header .scroll-down {
     align-self: end;
   }
-  .header .scroll-down span {
-    color: black;
+  .header a {
+    font-size: 1em;
+  }
+}
+@media (min-width: 1400px) {
+  .header {
+    font-size: 2em;
   }
 }
 
@@ -300,7 +307,6 @@ body h2 {
   }
 }
 .main {
-  background-color: #313638;
   padding-bottom: 2rem;
 }
 
@@ -383,38 +389,35 @@ body h2 {
   flex-direction: column;
   align-items: center;
   padding: 0;
-  font-weight: 400;
+  font-weight: 300;
 }
 .nav li {
   padding: 0.5em;
   margin: 0.5em 0;
-  border: 2px solid #f7fff7;
+  box-shadow: 0px 0px 7px #222121;
   border-radius: 10px;
-  min-width: 85%;
   text-align: center;
   transition: 0.15s ease-in;
 }
 .nav li:hover {
-  background-color: rgba(247, 255, 247, 0.3);
+  background-color: rgba(34, 33, 33, 0.3);
   cursor: pointer;
 }
 .nav a {
   text-decoration: none;
-  color: #f7fff7;
+  color: #ebe7e3;
+  min-width: 85%;
+  color: #222121;
 }
 @media (min-width: 1050px) {
   .nav {
-    color: #313638;
     margin: 0;
   }
   .nav li {
-    border-color: #313638;
+    border-color: #222121;
   }
   .nav li:hover {
-    background-color: rgba(49, 54, 56, 0.3);
-  }
-  .nav a {
-    color: #313638;
+    background-color: rgba(34, 33, 33, 0.3);
   }
 }
 
@@ -578,22 +581,23 @@ body h2 {
   flex-direction: column;
   flex-wrap: wrap;
   overflow: hidden;
-  background-color: #f7fff7;
-  color: #313638;
+  background-color: #ebe7e3;
+  color: #222121;
 }
 #skills .skills-title {
-  padding: 0 1em;
-  font-size: 3em;
+  padding: 0 5% 0;
   width: 100%;
   flex-basis: 100%;
 }
 #skills .full-skills-container {
   display: flex;
-  background: #313638;
   align-items: center;
   width: 100%;
 }
 #skills .skills-container {
+  border-radius: 0.25em;
+  box-shadow: 0px 0px 7px inset #222121;
+  background: transparent;
   width: 90%;
   margin: 0 auto;
   overflow-x: hidden;
@@ -603,7 +607,6 @@ body h2 {
   min-height: 600px;
   display: flex;
   justify-content: space-around;
-  background: #313638;
 }
 #skills .skills-icons {
   width: 100%;
@@ -620,121 +623,113 @@ body h2 {
 #skills .skills-icons.animating.left-current {
   animation: 1s cubic-bezier(0.69, -0.08, 0.47, 0.99) slide-left-current;
 }
-#skills .skills-left, #skills .skills-right {
+#skills .skills-left,
+#skills .skills-right {
   display: none;
-  color: #f7fff7;
+  color: #222121;
   background: transparent;
   border: none;
-  font-size: 2em;
+  font-size: 1.5em;
   max-width: 5%;
   margin: 0 0.25em;
   align-self: center;
   margin: 0 auto;
 }
-#skills .skills-left:hover, #skills .skills-right:hover {
-  font-size: 2.1em;
+#skills .skills-left:hover,
+#skills .skills-right:hover {
   cursor: pointer;
 }
-@media (min-width: 490px) {
-  #skills .skills-left, #skills .skills-right {
+@media (min-width: 790px) {
+  #skills .skills-left,
+#skills .skills-right {
     display: inline-block;
   }
 }
+
 #skills .icon-full {
   width: 13em;
   height: 18.2em;
   max-width: 90%;
-  background-color: #f7fff7;
-  color: #313638;
+  max-height: 90%;
+  background-color: #ebe7e3;
+  color: #222121;
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 1.5em;
-  transition: 0.5s ease-in;
+  transition: 0.3s ease-in;
+  box-shadow: 0px 0px 10px #222121;
 }
 #skills .icon-full .icon-img {
-  border-radius: 1.5em 1.5em 0 0;
-  min-width: 100%;
+  border-radius: 1.4em 1.4em 0 0;
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
-  border-bottom: 2px solid #313638;
-  height: 33%;
+  border-bottom: 2px solid #222121;
+  height: 33.3333333333%;
 }
 #skills .icon-full .icon-img img {
   align-self: center;
   width: 4.75em;
   height: 4.75em;
 }
+#skills .icon-full .icon-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 66.6666666667%;
+  background-color: #ebe7e3;
+  border-radius: 0 0 1.4em 1.4em;
+}
 #skills .icon-full p {
   font-size: 0.9em;
   font-weight: 300;
   padding: 0.2em 0.3em;
+  margin: 0;
   text-align: center;
 }
 #skills .icon-full h3 {
-  font-weight: 500;
+  font-weight: 400;
   margin-top: 0.3em;
   margin-bottom: 0.75em;
-}
-#skills .icon-full.next {
-  position: absolute;
-  left: 110%;
-  bottom: 5%;
+  font-size: 1.5em;
 }
 #skills .icon-full.hover:hover {
-  transform: scale(1.08);
-  box-shadow: 0px 0px 15px 0px #f7fff7;
+  transform: translateY(-5%);
   cursor: pointer;
 }
 #skills #html .icon-img {
   background-color: #f06529;
 }
 #skills #html.hover:hover {
-  border: 1px solid #f06529;
-  box-shadow: 0px 0px 5px 3px #f06529;
+  box-shadow: 0px 20px 60px #f06529;
 }
 #skills #css .icon-img {
   background-color: #2965f1;
 }
 #skills #css.hover:hover {
-  border: 1px solid #2965f1;
-  box-shadow: 0px 0px 5px 3px #2965f1;
+  box-shadow: 0px 20px 60px #2965f1;
 }
 #skills #js .icon-img {
   background-color: #f0db4f;
 }
 #skills #js.hover:hover {
-  border: 1px solid #f0db4f;
-  box-shadow: 0px 0px 5px 3px #f0db4f;
+  box-shadow: 0px 20px 60px #f0db4f;
 }
 #skills #react .icon-img {
   background-color: #61DBFB;
 }
 #skills #react.hover:hover {
-  border: 1px solid #61DBFB;
-  box-shadow: 0px 0px 5px 3px #61DBFB;
+  box-shadow: 0px 20px 60px #61DBFB;
 }
 #skills #sass .icon-img {
   background-color: #cc6699;
 }
 #skills #sass.hover:hover {
-  border: 1px solid #cc6699;
-  box-shadow: 0px 0px 5px 3px #cc6699;
+  box-shadow: 0px 20px 60px #cc6699;
 }
-#skills .icon-img {
-  margin: 0 auto;
-  width: 100%;
-  height: 100%;
-}
-#skills h3 {
-  font-size: 1.5em;
-  margin: 1.5em 0 0 0;
-}
-#skills p {
-  margin: 0;
-  padding: 0.75em;
-}
-
 @keyframes slide-right {
   0% {
     transform: translate(0, 0);
@@ -813,7 +808,7 @@ body h2 {
   height: 100vh;
   position: fixed;
   inset: 0;
-  background-color: rgba(49, 54, 56, 0.2);
+  background-color: rgba(34, 33, 33, 0.2);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -826,6 +821,7 @@ body h2 {
   width: 600px;
   height: 840px;
   max-width: 90%;
+  max-height: 90%;
   font-size: 1.5em;
 }
 #skills-modal .icon-full .icon-img {
@@ -855,7 +851,7 @@ body h2 {
 }
 #skills-modal .view-projects {
   text-decoration: none;
-  color: #313638;
+  color: #222121;
   margin-top: auto;
   margin-bottom: 0.5em;
   font-weight: 400;
@@ -870,6 +866,11 @@ body h2 {
 }
 #skills-modal.fade-out {
   animation: slide-out 500ms forwards;
+}
+@media (max-width: 790px) {
+  #skills-modal {
+    display: none;
+  }
 }
 
 @keyframes slide-right {
@@ -960,9 +961,9 @@ body h2 {
   width: 320px;
   padding: 1em;
   margin: 0 auto;
-  background: #f7fff7;
+  background: #ebe7e3;
   border-radius: 2em;
-  color: #313638;
+  color: #222121;
 }
 #projects .project-image {
   max-width: 100%;
@@ -970,7 +971,7 @@ body h2 {
 #projects .direction-btn {
   height: 10%;
   background-color: transparent;
-  color: #f7fff7;
+  color: #ebe7e3;
   border: none;
 }
 
@@ -1069,9 +1070,9 @@ body h2 {
   min-height: 8em;
 }
 #contact button {
-  background-color: #313638;
-  color: #f7fff7;
-  border: 1px solid #f7fff7;
+  background-color: #222121;
+  color: #ebe7e3;
+  border: 1px solid #ebe7e3;
   border-radius: 5px;
   padding: 0.5em;
 }

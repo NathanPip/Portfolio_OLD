@@ -12,8 +12,10 @@ function SkillsIcon({ skill, mouseEnter, mouseLeave, displayModal }) {
       <div className="icon-img">
         <img src={skill.src} alt={skill.id} />
       </div>
-      <h3> {skill.title} </h3>
-      <p>{skill.desc}</p>
+      <div className="icon-main">
+        <h3> {skill.title} </h3>
+        <p>{skill.desc}</p>
+      </div>
     </div>
   );
 }
