@@ -163,6 +163,11 @@ body h2 {
     font-size: 1.45em;
   }
 }
+@media (min-width: 1600px) {
+  .header #title {
+    font-size: 5.5em;
+  }
+}
 
 .main {
   padding-bottom: 2rem;
@@ -463,22 +468,94 @@ body h2 {
   padding: 0 5% 0;
 }
 #projects .project-card {
+  font-size: 0.85em;
+  width: 90%;
+  margin: 0 auto;
+  padding: 1.5em 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2em;
+  border-bottom: 2px solid #222121;
+}
+#projects .project-card:nth-of-type(1) {
+  border-top: 2px solid #222121;
+}
+#projects .project-head {
+  max-width: 25em;
   display: flex;
   flex-direction: column;
-  padding: 1em;
-  margin: 0 auto;
-  background: #ebe7e3;
-  border-radius: 2em;
-  color: #222121;
+}
+#projects .project-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 25em;
 }
 #projects .project-image {
-  max-width: 100%;
+  width: 100%;
 }
-#projects .direction-btn {
-  height: 10%;
-  background-color: transparent;
+#projects .project-title {
+  margin: 0;
+  margin-bottom: 0.5em;
+  font-size: 1.35em;
+  font-weight: 500;
+}
+#projects .project-desc {
+  margin: auto 0;
+}
+#projects .project-skills {
+  font-size: 0.6em;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#projects .project-skills li {
+  padding: 0.1em 0.6em;
+  border: 1px solid #222121;
+  border-radius: 0.75em;
+  margin: 0.25em;
+  background: #222121;
+  color: #ebe7e3;
+}
+#projects .project-buttons {
+  margin-top: 1em;
+  margin-left: auto;
+  font-size: 0.8em;
+}
+#projects .project-buttons .live-demo, #projects .project-buttons .github {
+  padding: 0.25em 0.5em;
+  background: #222121;
   color: #ebe7e3;
   border: none;
+  border-radius: 0.5em;
+  transition: 0.25s ease-in-out;
+}
+#projects .project-buttons .live-demo:hover, #projects .project-buttons .github:hover {
+  background: rgba(34, 33, 33, 0.8);
+  cursor: pointer;
+}
+#projects .project-buttons .live-demo {
+  margin-right: 0.5em;
+}
+@media (min-width: 760px) {
+  #projects .project-card {
+    font-size: 1.15em;
+  }
+}
+@media (min-width: 1610px) {
+  #projects .project-card:nth-of-type(2n) {
+    flex-direction: row-reverse;
+  }
+  #projects .project-card:nth-of-type(2n) .project-buttons {
+    margin-left: 0;
+    margin-right: auto;
+  }
+  #projects .project-card:nth-of-type(2n) .project-skills {
+    margin-left: auto;
+  }
 }
 
 #contact {

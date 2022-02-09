@@ -9,21 +9,93 @@
   display: flex;
   flex-direction: column;
   .project-card {
+    font-size: .85em;
+    width: 90%;
+    margin: 0 auto;
+    padding: 1.5em 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+    border-bottom: 2px solid $background-color;
+    &:nth-of-type(1) {
+      border-top: 2px solid $background-color;
+    }
+  }
+  .project-head {
+    max-width: 25em;
     display: flex;
     flex-direction: column;
-    padding: 1em;
-    margin: 0 auto;
-    background: $text-color;
-    border-radius: 2em;
-    color: $background-color;
+  }
+  .project-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 25em;
   }
   .project-image {
-    max-width: 100%;
+    width: 100%;
   }
-  .direction-btn {
-    height: 10%;
-    background-color: transparent;
-    color: $text-color;
-    border: none;
+  .project-title {
+    margin: 0;
+    margin-bottom: .5em;
+    font-size: 1.35em;
+    font-weight: 500;
+  }
+  .project-desc {
+    margin: auto 0;
+  }
+  .project-skills {
+    font-size: .6em;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      padding: 0.1em 0.6em;
+      border: 1px solid $background-color;
+      border-radius: .75em;
+      margin: 0.25em;
+      background: $background-color;
+      color: $text-color;
+    }
+  }
+  .project-buttons {
+    margin-top: 1em;
+    margin-left: auto;
+    font-size: .8em;
+    .live-demo, .github {
+      padding: .25em .5em;
+      background: $background-color;
+      color: $text-color;
+      border: none;
+      border-radius: .5em;
+      transition: .25s ease-in-out;
+      &:hover {
+        background: rgba($background-color, .8);
+        cursor: pointer;
+      }
+    }
+    .live-demo {
+      margin-right: .5em;
+    }
+  }
+  @include breakpoint($medium) {
+    .project-card {
+      font-size: 1.15em;
+    }
+  }
+  @include breakpoint(1610px) {
+    .project-card:nth-of-type(2n) {
+      flex-direction: row-reverse;
+      .project-buttons {
+        margin-left: 0;
+        margin-right: auto;
+      }
+      .project-skills {
+        margin-left: auto;
+      }
+    }
   }
 }

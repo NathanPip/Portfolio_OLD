@@ -39,7 +39,26 @@ const SKILLS_DATA = [
 ];
 
 const PROJECTS_DATA = [
-  {}
+  {
+    id:"players-plug",
+    title: "Player's Plug",
+    thumbnail: "/imgs/players-plug-img.png",
+    desc: "Player's Plug is a simple website that allows you to view all game deals across different video game vendors. Written in ReactJS it utilized the steam and cheapshark api to pull video game info and pricing data.",
+    skills: ['react', 'sass', 'webpack', 'steam api'],
+    filter: ['featured'],
+    github: '#',
+    live: '#'
+  },
+  {
+    id:"players-plug",
+    title: "Player's Plug",
+    thumbnail: "/imgs/players-plug-img.png",
+    desc: "Player's Plug is a simple website that allows you to view all game deals across different video game vendors. Written in ReactJS it utilized the steam and cheapshark api to pull video game info and pricing data.",
+    skills: ['react', 'sass', 'webpack', 'steam api'],
+    filter: ['featured'],
+    github: '#',
+    live: '#'
+  }
 ]
 
 
@@ -47,7 +66,7 @@ const PROJECTS_DATA = [
 
 ReactDOM.render(
   <React.StrictMode>
-    <App skills={SKILLS_DATA}/>
+    <App skills={SKILLS_DATA} projects={PROJECTS_DATA}/>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -59,4 +59,10 @@
   @include breakpoint($extra-large) {
     font-size: 1.45em;
   }
+
+  @include breakpoint(1600px) {
+    #title {
+      font-size: 5.5em;
+    }
+  }
 }
