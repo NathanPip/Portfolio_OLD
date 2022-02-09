@@ -1,6 +1,4 @@
-@import "../Utils/variables";
-@import "../Utils/mixins";
-@import "../Utils/keyframes";
+@use "../Utils" as *;
 
 .header {
   padding: 0 5% 0;
@@ -9,16 +7,14 @@
   justify-content: space-between;
   min-height: 100vh;
   color: $background-color;
-  // font-size: 1.25em;
   #title {
     font-size: 3em;
     font-weight: 400;
     margin: 0;
-    margin-top: .25em;
+    margin-top: 0.25em;
     border-top: 2px solid $background-color;
     border-right: 2px solid $background-color;
-    // box-shadow: -2px 2px 2px inset $background-color;
-    padding-bottom: .25em;
+    padding-bottom: 0.25em;
   }
   #title-desc {
     display: block;
@@ -37,7 +33,6 @@
   }
 
   // breakpoints
-
 
   @include breakpoint($medium) {
     font-size: 1.25em;

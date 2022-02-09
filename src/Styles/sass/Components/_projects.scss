@@ -1,0 +1,29 @@
+@use "../Utils" as *;
+
+#projects {
+  .projects-title {
+    padding: 0 5% 0;
+  }
+  width: 100%;
+  margin-bottom: 2em;
+  display: flex;
+  flex-direction: column;
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    margin: 0 auto;
+    background: $text-color;
+    border-radius: 2em;
+    color: $background-color;
+  }
+  .project-image {
+    max-width: 100%;
+  }
+  .direction-btn {
+    height: 10%;
+    background-color: transparent;
+    color: $text-color;
+    border: none;
+  }
+}
