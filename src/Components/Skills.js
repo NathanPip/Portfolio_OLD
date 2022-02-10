@@ -12,8 +12,8 @@ function Skills({ skills }) {
   const [modalDisplayed, setModalDisplayed] = useState(false);
   const [modalSkill, setModalSkill] = useState(skills[0]);
   const [iconsDisplayed, setIconsDisplayed] = useState(
-    window.innerWidth > cardBreak
-      ? Math.floor(window.innerWidth / cardBreak)
+    Math.min(window.innerWidth, 2200) > cardBreak
+      ? Math.floor(Math.min(window.innerWidth, 2200) / cardBreak)
       : 1
   );
   //interval for rotating skills {set to every 4 seconds}

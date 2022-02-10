@@ -7,11 +7,15 @@
   justify-content: space-between;
   min-height: 100vh;
   color: $background-color;
+
+  .title-container {
+    margin-right: auto;
+  }
   #title {
     font-size: 3em;
     font-weight: 400;
     margin: 0;
-    margin-top: 0.25em;
+    margin-top: 1em;
     border-top: 2px solid $background-color;
     border-right: 2px solid $background-color;
     padding-bottom: 0.25em;
@@ -60,9 +64,9 @@
     font-size: 1.45em;
   }
 
-  @include breakpoint(1600px) {
+  @include breakpoint(2000px) {
     #title {
-      font-size: 5.5em;
+      font-size: 5em;
     }
   }
 }

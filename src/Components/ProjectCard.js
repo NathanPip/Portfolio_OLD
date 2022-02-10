@@ -3,8 +3,8 @@ import React from "react";
 function ProjectCard({project}) {
   return (
     <div className="project-card">
-      <div className="project-head">
         <h3 className="project-title">{project.title}</h3>
+      <div className="project-head">
         <img className="project-image" alt={project.title + 'image'} src={process.env.PUBLIC_URL + project.thumbnail} />
         <ul className="project-skills">
           {project.skills.map(skill => <li key={skill} className="project-skills-item">{skill}</li>)}

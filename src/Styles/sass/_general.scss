@@ -16,10 +16,16 @@ body {
     background-color: $text-color;
     color: $background-color;
     h2 {
-        margin: .75em 0;
-        font-size: 1.5em;
-        font-weight: 500;
+        margin: .5em 0;
+        font-size: 2em;
+        font-weight: 400;
     }
+}
+
+#root {
+    width: 100%;
+    max-width: 2200px;
+    margin: 0 auto;
 }
 
 #about, #skills, #contact, #projects {

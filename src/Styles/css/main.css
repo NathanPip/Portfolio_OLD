@@ -89,9 +89,15 @@ body {
   color: #222121;
 }
 body h2 {
-  margin: 0.75em 0;
-  font-size: 1.5em;
-  font-weight: 500;
+  margin: 0.5em 0;
+  font-size: 2em;
+  font-weight: 400;
+}
+
+#root {
+  width: 100%;
+  max-width: 2200px;
+  margin: 0 auto;
 }
 
 #about, #skills, #contact, #projects {
@@ -110,11 +116,14 @@ body h2 {
   min-height: 100vh;
   color: #222121;
 }
+.header .title-container {
+  margin-right: auto;
+}
 .header #title {
   font-size: 3em;
   font-weight: 400;
   margin: 0;
-  margin-top: 0.25em;
+  margin-top: 1em;
   border-top: 2px solid #222121;
   border-right: 2px solid #222121;
   padding-bottom: 0.25em;
@@ -163,9 +172,9 @@ body h2 {
     font-size: 1.45em;
   }
 }
-@media (min-width: 1600px) {
+@media (min-width: 2000px) {
   .header #title {
-    font-size: 5.5em;
+    font-size: 5em;
   }
 }
 
@@ -205,6 +214,7 @@ body h2 {
     flex-direction: row;
     justify-content: center;
     margin-left: auto;
+    margin-top: 1.5em;
     order: -1;
   }
   .nav a {
@@ -482,10 +492,10 @@ body h2 {
   justify-content: center;
   flex-wrap: wrap;
   gap: 2em;
-  border-bottom: 2px solid #222121;
+  border-bottom: 1px solid #222121;
 }
 #projects .project-card:nth-of-type(1) {
-  border-top: 2px solid #222121;
+  border-top: 1px solid #222121;
 }
 #projects .project-head {
   max-width: 25em;
@@ -503,9 +513,11 @@ body h2 {
 }
 #projects .project-title {
   margin: 0;
+  min-width: 100%;
+  text-align: center;
   margin-bottom: 0.5em;
-  font-size: 1.35em;
-  font-weight: 500;
+  font-size: 1.5em;
+  font-weight: 400;
 }
 #projects .project-desc {
   margin: auto 0;
@@ -572,16 +584,22 @@ body h2 {
 #contact .contact-form {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
 }
-#contact .contact-aside {
-  flex-grow: 1;
+#contact label {
+  margin-bottom: 0.25em;
 }
 #contact input,
 #contact textarea {
   margin-bottom: 1em;
   border-radius: 10px;
   padding: 0.25em 0.5em;
+  border: none;
+  outline: none;
+  background: #eee;
+  border: 1px solid #222121;
 }
 #contact textarea {
   min-height: 8em;
@@ -592,6 +610,11 @@ body h2 {
   border: 1px solid #ebe7e3;
   border-radius: 5px;
   padding: 0.5em;
+  transition: 0.25s ease-in-out;
+}
+#contact button:hover {
+  cursor: pointer;
+  background: rgba(34, 33, 33, 0.8);
 }
 @media (min-width: 1400px) {
   #contact .contact-body {
