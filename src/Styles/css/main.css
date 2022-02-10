@@ -95,7 +95,7 @@ body h2 {
 }
 
 #about, #skills, #contact, #projects {
-  padding: 3em 0;
+  padding: 1.5em 0;
 }
 
 .hide {
@@ -261,7 +261,7 @@ body h2 {
 }
 #skills .skills-icons-container {
   width: 200%;
-  min-height: 600px;
+  min-height: 400px;
   display: flex;
   justify-content: space-around;
 }
@@ -304,8 +304,8 @@ body h2 {
 }
 
 #skills .icon-full {
-  width: 13em;
-  height: 18.2em;
+  width: 9em;
+  height: 12.6em;
   max-width: 90%;
   max-height: 90%;
   background-color: #ebe7e3;
@@ -341,7 +341,7 @@ body h2 {
   border-radius: 0 0 1.4em 1.4em;
 }
 #skills .icon-full p {
-  font-size: 0.9em;
+  font-size: 0.6em;
   font-weight: 300;
   padding: 0.2em 0.3em;
   margin: 0;
@@ -350,8 +350,8 @@ body h2 {
 #skills .icon-full h3 {
   font-weight: 400;
   margin-top: 0.3em;
-  margin-bottom: 0.75em;
-  font-size: 1.5em;
+  margin-bottom: 0.5em;
+  font-size: 1.15em;
 }
 #skills .icon-full.hover:hover {
   transform: translateY(-5%);
@@ -416,6 +416,12 @@ body h2 {
   width: 200px;
   height: 200px;
   align-self: center;
+}
+#skills-modal .icon-full p {
+  font-size: 1em;
+}
+#skills-modal .icon-full h3 {
+  font-size: 1.5em;
 }
 #skills-modal button {
   height: 1em;

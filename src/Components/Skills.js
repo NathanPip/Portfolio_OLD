@@ -3,7 +3,7 @@ import SkillsIcon from "./SkillsIcons";
 import SkillsModal from "./SkillsModal";
 
 function Skills({ skills }) {
-  const cardBreak = 400;
+  const cardBreak = 300;
   const [index, setIndex] = useState(0);
   const [isAnimating, setAnimating] = useState(false);
   const [canAnimate, setCanAnimate] = useState(true);
