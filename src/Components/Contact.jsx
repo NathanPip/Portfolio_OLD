@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
-// const dotenv = require("dotenv");
 
 function Contact() {
   const [submitStatus, setSubmitStatus] = useState(false);
@@ -42,6 +41,23 @@ function Contact() {
     <div id="contact">
       <h2 className="contact-form-title">Contact</h2>
       <div className="contact-body">
+        <div className="contact-aside">
+          <p>Get in touch!</p>
+          <p>
+            <img src="https://img.icons8.com/ios-filled/50/000000/email-open.png" />{" "}
+            <a href="mailto: nathan.piper.sd@gmail.com">
+              nathan.piper.sd@gmail.com
+            </a>
+          </p>
+          <p>
+            <img src="https://img.icons8.com/ios-filled/100/000000/linkedin.png" />{" "}
+            <a>nathan.piper</a>
+          </p>
+          <p>
+            <img src="https://img.icons8.com/ios-filled/50/000000/apple-phone.png" />{" "}
+            <a href="tel:7075099345">1 (707) 509-9345</a>
+          </p>
+        </div>
         <form ref={form} className="contact-form" onSubmit={handleSubmit}>
           <label htmlFor="name">Name: </label>
           <input type="text" id="name" name="to_name"></input>
@@ -54,8 +70,6 @@ function Contact() {
 
           <button type="submit">{submitStatus ? "Sent!" : "Submit"}</button>
         </form>
-        <div className="contact-aside hide-sm">
-        </div>
       </div>
     </div>
   );
