@@ -46,6 +46,7 @@
     flex-wrap: wrap;
     gap: 2em;
     border-bottom: 1px solid $background-color;
+    animation: fade-in .75s ease-in-out forwards;
   }
   .project-head {
     max-width: 25em;
@@ -60,6 +61,11 @@
   }
   .project-image {
     width: 100%;
+    transition: .35s ease-in;
+    &:hover {
+      transform: scale(1.03);
+      box-shadow: 0px 4px 7px $background-color;
+    }
   }
   .project-title {
     margin: 0;
@@ -94,19 +100,19 @@
     font-size: 0.8em;
     .live-demo,
     .github {
-      padding: 0.25em 0.5em;
-      background: $background-color;
-      color: $text-color;
+      padding: 0.15em;
+      background: $text-color;
+      color: $background-color;
       border: none;
-      border-radius: 0.5em;
+      border-bottom: 2px solid $text-color;
       transition: 0.25s ease-in-out;
       &:hover {
-        background: rgba($background-color, 0.8);
+        border-bottom: 2px solid $background-color;
         cursor: pointer;
       }
     }
     .live-demo {
-      margin-right: 0.5em;
+      margin-right: 1em;
     }
   }
   @include breakpoint($medium) {

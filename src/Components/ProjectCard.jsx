@@ -5,7 +5,7 @@ function ProjectCard({project}) {
     <div className="project-card">
         <h3 className="project-title">{project.title}</h3>
       <div className="project-head">
-        <img className="project-image" alt={project.title + 'image'} src={process.env.PUBLIC_URL + project.thumbnail} />
+        <a href={project.live}><img className="project-image" alt={project.title + 'image'} src={process.env.PUBLIC_URL + project.thumbnail} /></a>
         <ul className="project-skills">
           {project.skills.map(skill => <li key={skill} className="project-skills-item">{skill}</li>)}
         </ul>

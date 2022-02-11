@@ -569,6 +569,7 @@ a {
   flex-wrap: wrap;
   gap: 2em;
   border-bottom: 1px solid #222121;
+  animation: fade-in 0.75s ease-in-out forwards;
 }
 #projects .project-head {
   max-width: 25em;
@@ -583,6 +584,11 @@ a {
 }
 #projects .project-image {
   width: 100%;
+  transition: 0.35s ease-in;
+}
+#projects .project-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 4px 7px #222121;
 }
 #projects .project-title {
   margin: 0;
@@ -618,20 +624,20 @@ a {
 }
 #projects .project-buttons .live-demo,
 #projects .project-buttons .github {
-  padding: 0.25em 0.5em;
-  background: #222121;
-  color: #ebe7e3;
+  padding: 0.15em;
+  background: #ebe7e3;
+  color: #222121;
   border: none;
-  border-radius: 0.5em;
+  border-bottom: 2px solid #ebe7e3;
   transition: 0.25s ease-in-out;
 }
 #projects .project-buttons .live-demo:hover,
 #projects .project-buttons .github:hover {
-  background: rgba(34, 33, 33, 0.8);
+  border-bottom: 2px solid #222121;
   cursor: pointer;
 }
 #projects .project-buttons .live-demo {
-  margin-right: 0.5em;
+  margin-right: 1em;
 }
 @media (min-width: 760px) {
   #projects .project-card {
