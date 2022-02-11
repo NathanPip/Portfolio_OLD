@@ -1,13 +1,17 @@
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import Nav from "./Nav";
 
 function Header() {
-
   const [scroll, setScroll] = useState(window.scrollY);
 
-  useEffect(()=>{
-    window.addEventListener('scroll', ()=>{setScroll(window.scrollY)});
-    return () => window.removeEventListener('scroll', ()=>{setScroll(window.scrollY)})
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setScroll(window.scrollY);
+    });
+    return () =>
+      window.removeEventListener("scroll", () => {
+        setScroll(window.scrollY);
+      });
   }, []);
 
   return (
@@ -17,14 +21,50 @@ function Header() {
           Nathan Piper <span id="title-desc">front-end web developer</span>
         </h1>
         <ul className="header-links">
-            <li><a href="https://github.com/nather22" target="_blank"><img alt="github logo" src="https://img.icons8.com/ios-glyphs/120/000000/github.png" /> github</a></li>
-            <li><a href="" ><img alt="linkedin logo" src="https://img.icons8.com/ios-filled/100/000000/linkedin.png" /> linkedin</a></li>
-            <li><a href="" ><img alt="resume logo" src="https://img.icons8.com/ios/100/000000/open-resume.png" /> resume</a></li>
-            <li><a href="" ><img alt="work briefcase logo" src="https://img.icons8.com/dotty/80/000000/briefcase.png" /> my work</a></li>
+          <li>
+            <a href="https://github.com/nather22" target="_blank">
+              <img
+                alt="github logo"
+                src="https://img.icons8.com/ios-glyphs/120/000000/github.png"
+              />{" "}
+              github
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img
+                alt="linkedin logo"
+                src="https://img.icons8.com/ios-filled/100/000000/linkedin.png"
+              />{" "}
+              linkedin
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img
+                alt="resume logo"
+                src="https://img.icons8.com/ios/100/000000/open-resume.png"
+              />{" "}
+              resume
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img
+                alt="work briefcase logo"
+                src="https://img.icons8.com/dotty/80/000000/briefcase.png"
+              />{" "}
+              my work
+            </a>
+          </li>
         </ul>
+        <p className="about-me">
+          a dedicated front-end developer with a love for code and hands-on
+          experience designing and developing websites and web apps
+        </p>
       </div>
       <Nav />
-      <p className={`scroll-down ${scroll > 25 ? 'fade-out' : ''}`}>
+      <p className={`scroll-down ${scroll > 25 ? "fade-out" : ""}`}>
         scroll <span>down</span>
       </p>
     </div>

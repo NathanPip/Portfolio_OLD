@@ -57,6 +57,38 @@
     transform: translateY(0%);
   }
 }
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes slide-in-bottom {
+  0% {
+    transform: translatey(500%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-300%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
 @keyframes slide-out {
   0% {
     transform: translateY(0%);
@@ -125,6 +157,7 @@ a {
   justify-content: space-between;
   min-height: 100vh;
   color: #222121;
+  animation: fade-in 1s ease-in-out forwards;
 }
 .header .title-container {
   margin-top: 3em;
@@ -133,6 +166,7 @@ a {
   flex-wrap: wrap;
 }
 .header .header-links {
+  animation: slide-in-bottom 1s cubic-bezier(0.21, 1.1, 0.72, 1.05) forwards;
   display: flex;
   flex-wrap: wrap;
   list-style: none;
@@ -141,6 +175,7 @@ a {
 }
 .header .header-links li {
   font-size: 0.65em;
+  white-space: nowrap;
   margin: 0.5em 0 1em 0.25em;
   transition: 0.3s ease-in-out transform;
 }
@@ -156,7 +191,14 @@ a {
   transform: translateX(10px);
   cursor: pointer;
 }
+.header .about-me {
+  animation: slide-in-right 1s cubic-bezier(0.21, 1.1, 0.72, 1) forwards;
+  font-size: 1em;
+  margin: 0;
+  font-weight: 300;
+}
 .header #title {
+  animation: slide-in-left 1s cubic-bezier(0.21, 1.1, 0.72, 1) forwards;
   font-size: 3em;
   font-weight: 400;
   margin: 0;
@@ -175,7 +217,7 @@ a {
   padding-bottom: 0.5em;
   text-align: center;
   font-weight: 300;
-  align-self: center;
+  margin-top: auto;
   animation: fade-in-out 2s infinite alternate;
   grid-area: scroll;
 }
@@ -188,6 +230,7 @@ a {
   }
   .header #title {
     font-size: 2.8em;
+    white-space: nowrap;
   }
   .header .header-links {
     display: inline-block;
@@ -204,12 +247,14 @@ a {
     flex-direction: column;
     align-items: center;
   }
+  .header .title-container {
+    margin-right: auto;
+  }
   .header #title {
     font-size: 3.65em;
     padding: 0.25em;
     margin-top: 0;
     margin-bottom: 1em;
-    margin-right: auto;
   }
   .header .scroll-down {
     align-self: end;
@@ -218,6 +263,15 @@ a {
 @media (min-width: 1400px) {
   .header {
     font-size: 1.45em;
+  }
+  .header .title-container {
+    flex-wrap: nowrap;
+  }
+  .header .about-me {
+    font-size: 0.9em;
+  }
+  .header .header-links {
+    margin-right: 1em;
   }
 }
 @media (min-width: 2000px) {
@@ -232,11 +286,12 @@ a {
 
 .nav {
   list-style: none;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   padding: 0;
   font-weight: 300;
+  animation: slide-in-top 1s cubic-bezier(0.21, 1.1, 0.72, 1) forwards;
 }
 .nav li {
   padding: 0.5em;
@@ -255,6 +310,11 @@ a {
   color: #ebe7e3;
   min-width: 85%;
   color: #222121;
+}
+@media (min-width: 760px) {
+  .nav {
+    display: flex;
+  }
 }
 @media (min-width: 1050px) {
   .nav {

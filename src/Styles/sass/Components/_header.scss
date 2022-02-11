@@ -7,6 +7,7 @@
   justify-content: space-between;
   min-height: 100vh;
   color: $background-color;
+  animation: fade-in 1s ease-in-out forwards;
 
   .title-container {
     margin-top: 3em;
@@ -15,15 +16,17 @@
     flex-wrap: wrap;
   }
   .header-links {
+    animation: slide-in-bottom 1s cubic-bezier(0.21, 1.1, 0.72, 1.05) forwards;    
     display: flex;
     flex-wrap: wrap;
     list-style: none;
     margin: 0;
     padding: 0;
     li {
-      font-size: .65em;
-      margin: .5em 0 1em .25em;
-      transition: .3s ease-in-out transform;
+      font-size: 0.65em;
+      white-space: nowrap;
+      margin: 0.5em 0 1em 0.25em;
+      transition: 0.3s ease-in-out transform;
       a {
         display: flex;
         align-items: center;
@@ -38,7 +41,14 @@
       }
     }
   }
+  .about-me {
+    animation: slide-in-right 1s cubic-bezier(0.21, 1.1, 0.72, 1) forwards;
+    font-size: 1em;
+    margin: 0;
+    font-weight: 300;
+  }
   #title {
+    animation: slide-in-left 1s cubic-bezier(0.21, 1.1, 0.72, 1) forwards;
     font-size: 3em;
     font-weight: 400;
     margin: 0;
@@ -57,11 +67,11 @@
     padding-bottom: 0.5em;
     text-align: center;
     font-weight: 300;
-    align-self: center;
+    margin-top: auto;
     animation: fade-in-out 2s infinite alternate;
     grid-area: scroll;
     &.fade-out {
-      animation: fade-in .5s reverse forwards;
+      animation: fade-in 0.5s reverse forwards;
     }
   }
 
@@ -71,6 +81,7 @@
     font-size: 1.25em;
     #title {
       font-size: 2.8em;
+      white-space: nowrap;
     }
     .header-links {
       display: inline-block;
@@ -88,12 +99,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    .title-container {
+      margin-right: auto;
+    }
     #title {
       font-size: 3.65em;
       padding: 0.25em;
       margin-top: 0;
       margin-bottom: 1em;
-      margin-right: auto;
     }
     .scroll-down {
       align-self: end;
@@ -102,6 +115,15 @@
 
   @include breakpoint($extra-large) {
     font-size: 1.45em;
+    .title-container {
+      flex-wrap: nowrap;
+    }
+    .about-me {
+      font-size: .9em;
+    }
+    .header-links {
+      margin-right: 1em;
+    }
   }
 
   @include breakpoint(2000px) {
