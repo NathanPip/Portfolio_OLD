@@ -1,7 +1,15 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Nav from "./Nav";
 
 function Header() {
+
+  const [scroll, setScroll] = useState(window.scrollY);
+
+  useEffect(()=>{
+    window.addEventListener('scroll', ()=>{setScroll(window.scrollY)});
+    return () => window.removeEventListener('scroll', ()=>{setScroll(window.scrollY)})
+  }, []);
+
   return (
     <div className="header">
       <div className="title-container">
@@ -16,7 +24,7 @@ function Header() {
         </ul>
       </div>
       <Nav />
-      <p className="scroll-down">
+      <p className={`scroll-down ${scroll > 25 ? 'fade-out' : ''}`}>
         scroll <span>down</span>
       </p>
     </div>

@@ -45,17 +45,17 @@ const PROJECTS_DATA = [
     thumbnail: "/imgs/players-plug-img.png",
     desc: "Player's Plug is a simple website that allows you to view all game deals across different video game vendors. Written in ReactJS it utilized the steam and cheapshark api to pull video game info and pricing data.",
     skills: ['react', 'sass', 'webpack', 'steam api'],
-    filter: ['featured'],
+    filter: ['Featured'],
     github: '#',
     live: '#'
   },
   {
-    id:"players-plug",
+    id:"players-plg",
     title: "Player's Plug",
     thumbnail: "/imgs/players-plug-img.png",
     desc: "Player's Plug is a simple website that allows you to view all game deals across different video game vendors. Written in ReactJS it utilized the steam and cheapshark api to pull video game info and pricing data.",
     skills: ['react', 'sass', 'webpack', 'steam api'],
-    filter: ['featured'],
+    filter: ['lsakmd'],
     github: '#',
     live: '#'
   }

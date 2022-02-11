@@ -175,6 +175,9 @@ a {
   animation: fade-in-out 2s infinite alternate;
   grid-area: scroll;
 }
+.header .scroll-down.fade-out {
+  animation: fade-in 0.5s reverse forwards;
+}
 @media (min-width: 760px) {
   .header {
     font-size: 1.25em;
@@ -521,8 +524,36 @@ a {
   display: flex;
   flex-direction: column;
 }
+#projects .projects-header-container {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #222121;
+}
 #projects .projects-title {
-  padding: 0 5% 0;
+  padding: 0 2.5% 0 5%;
+}
+#projects .filter-button {
+  font-size: 0.85em;
+  height: 50%;
+  margin-right: 1em;
+  padding: 0.1em 0.35em;
+  background: #ebe7e3;
+  color: #222121;
+  box-shadow: 0px 0px 5px #222121;
+  border: none;
+  border-radius: 0.75em;
+  transition: 0.25s ease-in background-color color;
+}
+#projects .filter-button.active {
+  background-color: #222121;
+  color: #ebe7e3;
+}
+#projects .filter-button.active:hover {
+  background-color: rgba(34, 33, 33, 0.9);
+}
+#projects .filter-button:hover {
+  cursor: pointer;
+  background-color: rgba(34, 33, 33, 0.1);
 }
 #projects .project-card {
   font-size: 0.85em;
@@ -534,9 +565,6 @@ a {
   flex-wrap: wrap;
   gap: 2em;
   border-bottom: 1px solid #222121;
-}
-#projects .project-card:nth-of-type(1) {
-  border-top: 1px solid #222121;
 }
 #projects .project-head {
   max-width: 25em;
@@ -584,7 +612,8 @@ a {
   margin-left: auto;
   font-size: 0.8em;
 }
-#projects .project-buttons .live-demo, #projects .project-buttons .github {
+#projects .project-buttons .live-demo,
+#projects .project-buttons .github {
   padding: 0.25em 0.5em;
   background: #222121;
   color: #ebe7e3;
@@ -592,7 +621,8 @@ a {
   border-radius: 0.5em;
   transition: 0.25s ease-in-out;
 }
-#projects .project-buttons .live-demo:hover, #projects .project-buttons .github:hover {
+#projects .project-buttons .live-demo:hover,
+#projects .project-buttons .github:hover {
   background: rgba(34, 33, 33, 0.8);
   cursor: pointer;
 }
