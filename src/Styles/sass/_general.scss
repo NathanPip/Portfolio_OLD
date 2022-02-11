@@ -22,6 +22,11 @@ body {
     }
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 #root {
     width: 100%;
     max-width: 2200px;

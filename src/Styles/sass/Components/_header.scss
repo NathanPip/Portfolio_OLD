@@ -9,13 +9,41 @@
   color: $background-color;
 
   .title-container {
+    margin-top: 3em;
     margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .header-links {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      font-size: .65em;
+      margin: .5em 0 1em .25em;
+      transition: .3s ease-in-out transform;
+      a {
+        display: flex;
+        align-items: center;
+      }
+      img {
+        // display: none;
+        height: 1.25em;
+        width: 1.25em;
+        margin-top: auto;
+      }
+      &:hover {
+        transform: translateX(10px);
+        cursor: pointer;
+      }
+    }
   }
   #title {
     font-size: 3em;
     font-weight: 400;
     margin: 0;
-    margin-top: 1em;
     border-top: 2px solid $background-color;
     border-right: 2px solid $background-color;
     padding-bottom: 0.25em;
@@ -40,6 +68,17 @@
 
   @include breakpoint($medium) {
     font-size: 1.25em;
+    #title {
+      font-size: 2.8em;
+    }
+    .header-links {
+      display: inline-block;
+      li {
+        img {
+          display: inline-block;
+        }
+      }
+    }
   }
 
   @include breakpoint($large) {
@@ -49,7 +88,7 @@
     flex-direction: column;
     align-items: center;
     #title {
-      font-size: 4em;
+      font-size: 3.65em;
       padding: 0.25em;
       margin-top: 0;
       margin-bottom: 1em;
