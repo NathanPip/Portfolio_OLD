@@ -446,8 +446,8 @@ a {
 }
 #skills .icon-full .icon-img img {
   align-self: center;
-  width: 4.75em;
-  height: 4.75em;
+  width: 4em;
+  height: 4em;
 }
 #skills .icon-full .icon-main {
   display: flex;
@@ -476,22 +476,22 @@ a {
   cursor: pointer;
 }
 #skills #html .icon-img {
-  background-color: #f06529;
+  background-color: #f3722c;
 }
 #skills #html.hover:hover {
-  box-shadow: 0px 20px 60px #f06529;
+  box-shadow: 0px 20px 60px #f3722c;
 }
 #skills #css .icon-img {
-  background-color: #2965f1;
+  background-color: #43aa8b;
 }
 #skills #css.hover:hover {
-  box-shadow: 0px 20px 60px #2965f1;
+  box-shadow: 0px 20px 60px #43aa8b;
 }
 #skills #js .icon-img {
-  background-color: #f0db4f;
+  background-color: #f9c74f;
 }
 #skills #js.hover:hover {
-  box-shadow: 0px 20px 60px #f0db4f;
+  box-shadow: 0px 20px 60px #f9c74f;
 }
 #skills #react .icon-img {
   background-color: #61DBFB;
@@ -504,6 +504,30 @@ a {
 }
 #skills #sass.hover:hover {
   box-shadow: 0px 20px 60px #cc6699;
+}
+#skills #node .icon-img {
+  background-color: #34ec5c;
+}
+#skills #node.hover:hover {
+  box-shadow: 0px 20px 60px #34ec5c;
+}
+#skills #express .icon-img {
+  background-color: #577590;
+}
+#skills #express.hover:hover {
+  box-shadow: 0px 20px 60px #577590;
+}
+#skills #git .icon-img {
+  background-color: #f94144;
+}
+#skills #git.hover:hover {
+  box-shadow: 0px 20px 60px #f94144;
+}
+#skills #jira .icon-img {
+  background-color: #4389f1;
+}
+#skills #jira.hover:hover {
+  box-shadow: 0px 20px 60px #4389f1;
 }
 
 #skills-modal {

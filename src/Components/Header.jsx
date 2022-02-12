@@ -26,16 +26,16 @@ function Header() {
               <img
                 alt="github logo"
                 src="https://img.icons8.com/ios-glyphs/120/000000/github.png"
-              />{" "}
+              />
               github
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="https://www.linkedin.com/in/nathan-piper-3b8610231/" target="_blank">
               <img
                 alt="linkedin logo"
                 src="https://img.icons8.com/ios-filled/100/000000/linkedin.png"
-              />{" "}
+              />
               linkedin
             </a>
           </li>
@@ -44,16 +44,16 @@ function Header() {
               <img
                 alt="resume logo"
                 src="https://img.icons8.com/ios/100/000000/open-resume.png"
-              />{" "}
+              />
               resume
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="#projects">
               <img
                 alt="work briefcase logo"
                 src="https://img.icons8.com/dotty/80/000000/briefcase.png"
-              />{" "}
+              />
               my work
             </a>
           </li>

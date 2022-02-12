@@ -51,7 +51,7 @@ function Contact() {
           </p>
           <p>
             <img src="https://img.icons8.com/ios-filled/100/000000/linkedin.png" />{" "}
-            <a>nathan.piper</a>
+            <a href="https://www.linkedin.com/in/nathan-piper-3b8610231" target="_blank">linkedin</a>
           </p>
           <p>
             <img src="https://img.icons8.com/ios-filled/50/000000/apple-phone.png" />{" "}
