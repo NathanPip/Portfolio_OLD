@@ -41,13 +41,13 @@ const DATA = {
       desc:
         "knowledge of the node package manager as well as server-side rendering, view-engines, routing, and building RESTful apis"
     },
-    {
-      id: "express",
-      title: "Express",
-      src: "https://img.icons8.com/windows/256/000000/node-js.png",
-      desc:
-        "knowledge in express routing and creating basic express servers"
-    },
+    // {
+    //   id: "express",
+    //   title: "Express",
+    //   src: "https://img.icons8.com/windows/256/000000/node-js.png",
+    //   desc:
+    //     "knowledge in express routing and creating basic express servers"
+    // },
     {
       id: "git",
       title: "Git",
@@ -86,6 +86,17 @@ const DATA = {
       filter: ["Featured"],
       github: "https://github.com/nather22/Portfolio",
       live: "#"
+    },
+    {
+      id: "color-picker",
+      title: "Color Picker Portfolio",
+      thumbnail: "/imgs/color-picker-img.png",
+      desc:
+        "A simple game written in pure javascript where you have to pick the colored square corresponding to the rgb value you are given.",
+      skills: ["javascript", "css", "html"],
+      filter: ["Featured"],
+      github: "https://github.com/nather22/color-picker-game",
+      live: "https://lucid-murdock-887a65.netlify.app/"
     },
   ]
 };
