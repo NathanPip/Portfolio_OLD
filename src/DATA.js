@@ -88,8 +88,19 @@ const DATA = {
       live: "#"
     },
     {
+      id: "canvas-arcade",
+      title: "Canvas Arcade",
+      thumbnail: "/imgs/canvas-arcade.png",
+      desc:
+        "A site I built to host a bunch of html canvas games I made",
+      skills: ["javascript", "css", "node", "express"],
+      filter: ["Featured"],
+      github: "https://github.com/nather22/CanvasArcade",
+      live: "https://epic-mestorf-a8b563.netlify.app/"
+    },
+    {
       id: "color-picker",
-      title: "Color Picker Portfolio",
+      title: "Color Picker Game",
       thumbnail: "/imgs/color-picker-img.png",
       desc:
         "A simple game written in pure javascript where you have to pick the colored square corresponding to the rgb value you are given.",
