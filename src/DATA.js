@@ -74,7 +74,7 @@ const DATA = {
       skills: ["react", "sass", "webpack", "steam api", "cheapshark api", "node", "express"],
       filter: ["Featured"],
       github: "https://github.com/nather22/game-deals-site",
-      live: "https://jovial-borg-52685f.netlify.app/"
+      live: "https://players-plug.herokuapp.com/"
     },
     {
       id: "portfolio",
@@ -92,11 +92,11 @@ const DATA = {
       title: "Canvas Arcade",
       thumbnail: "/imgs/canvas-arcade.png",
       desc:
-        "A site I built to host a bunch of html canvas games I made",
-      skills: ["javascript", "css", "node", "express"],
+        "A site I built to host a bunch of html canvas games I made, also wrote an api and database for a global highscore system",
+      skills: ["html","javascript", "css", "node", "express", "postgre"],
       filter: ["Featured"],
       github: "https://github.com/nather22/CanvasArcade",
-      live: "https://epic-mestorf-a8b563.netlify.app/"
+      live: "https://canvas-arcade.herokuapp.com/"
     },
     {
       id: "color-picker",
@@ -105,7 +105,7 @@ const DATA = {
       desc:
         "A simple game written in pure javascript where you have to pick the colored square corresponding to the rgb value you are given.",
       skills: ["javascript", "css", "html"],
-      filter: ["Featured"],
+      filter: [""],
       github: "https://github.com/nather22/color-picker-game",
       live: "https://lucid-murdock-887a65.netlify.app/"
     },

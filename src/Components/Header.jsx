@@ -40,21 +40,21 @@ function Header() {
             </a>
           </li>
           <li>
-            <a href="">
-              <img
-                alt="resume logo"
-                src="https://img.icons8.com/ios/100/000000/open-resume.png"
-              />
-              resume
-            </a>
-          </li>
-          <li>
             <a href="#projects">
               <img
                 alt="work briefcase logo"
                 src="https://img.icons8.com/dotty/80/000000/briefcase.png"
               />
               my work
+            </a>
+          </li>
+          <li>
+            <a href="https://docs.google.com/document/d/1_7k2zIPNNdGSqMGPXK-u_X-QOQbP_9OQp8re2uXRhBg/edit?usp=sharing" target="_blank">
+              <img
+                alt="resume logo"
+                src="https://img.icons8.com/ios/100/000000/open-resume.png"
+              />
+              resume
             </a>
           </li>
         </ul>
