@@ -42,6 +42,7 @@ function Skills({ skills }) {
     const timeout = setTimeout(() => {
       if (!modalDisplayed) setModalHiding(true);
     }, 500);
+    return () => clearTimeout(timeout);
   }, [modalDisplayed]);
 
   //Skill Icons Functions

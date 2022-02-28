@@ -22,7 +22,7 @@ function Header() {
         </h1>
         <ul className="header-links">
           <li>
-            <a href="https://github.com/nather22" target="_blank">
+            <a href="https://github.com/nather22" target="_blank" rel="noreferrer">
               <img
                 alt="github logo"
                 src="https://img.icons8.com/ios-glyphs/120/000000/github.png"
@@ -31,7 +31,7 @@ function Header() {
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/nathan-piper-3b8610231/" target="_blank">
+            <a href="https://www.linkedin.com/in/nathan-piper-3b8610231/" target="_blank" rel="noreferrer">
               <img
                 alt="linkedin logo"
                 src="https://img.icons8.com/ios-filled/100/000000/linkedin.png"
@@ -49,7 +49,7 @@ function Header() {
             </a>
           </li>
           <li>
-            <a href="https://docs.google.com/document/d/1_7k2zIPNNdGSqMGPXK-u_X-QOQbP_9OQp8re2uXRhBg/edit?usp=sharing" target="_blank">
+            <a href="https://docs.google.com/document/d/1_7k2zIPNNdGSqMGPXK-u_X-QOQbP_9OQp8re2uXRhBg/edit?usp=sharing" target="_blank" rel="noreferrer">
               <img
                 alt="resume logo"
                 src="https://img.icons8.com/ios/100/000000/open-resume.png"

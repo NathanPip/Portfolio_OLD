@@ -44,17 +44,17 @@ function Contact() {
         <div className="contact-aside">
           <p>Get in touch!</p>
           <p>
-            <img src="https://img.icons8.com/ios-filled/50/000000/email-open.png" />{" "}
+            <img src="https://img.icons8.com/ios-filled/50/000000/email-open.png" alt="email envelope icon"/>{" "}
             <a href="mailto: nathan.piper.sd@gmail.com">
               nathan.piper.sd@gmail.com
             </a>
           </p>
           <p>
-            <img src="https://img.icons8.com/ios-filled/100/000000/linkedin.png" />{" "}
-            <a href="https://www.linkedin.com/in/nathan-piper-3b8610231" target="_blank">linkedin</a>
+            <img src="https://img.icons8.com/ios-filled/100/000000/linkedin.png" alt="linkedin logo"/>{" "}
+            <a href="https://www.linkedin.com/in/nathan-piper-3b8610231" target="_blank" rel="noreferrer">linkedin</a>
           </p>
           <p>
-            <img src="https://img.icons8.com/ios-filled/50/000000/apple-phone.png" />{" "}
+            <img src="https://img.icons8.com/ios-filled/50/000000/apple-phone.png" alt="telephone icon"/>{" "}
             <a href="tel:7075099345">1 (707) 509-9345</a>
           </p>
         </div>
