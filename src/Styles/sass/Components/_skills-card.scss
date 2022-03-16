@@ -80,4 +80,7 @@
   #jira {
     @include icon-full-color($jira-color);
   }
+  #sql {
+    @include icon-full-color($sql-color);
+  }
 }
