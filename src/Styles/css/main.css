@@ -41,6 +41,22 @@
     opacity: 1;
   }
 }
+@keyframes fade--in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade--out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 @keyframes fade-in-out {
   0% {
     opacity: 0.2;
@@ -103,6 +119,11 @@
   }
   100% {
     transform: translateY(10px);
+  }
+}
+@keyframes slide--out--right {
+  0% {
+    transform: translateX();
   }
 }
 * {
@@ -358,67 +379,65 @@ a {
   overflow: hidden;
   background-color: #ebe7e3;
   color: #222121;
+  padding: 0 5% 0;
 }
 #skills .skills-title {
-  padding: 0 5% 0;
   width: 100%;
   flex-basis: 100%;
 }
 #skills .full-skills-container {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   width: 100%;
 }
 #skills .skills-container {
+  flex: 1;
+  padding: 1em;
   border-radius: 0.25em;
   box-shadow: 0px 0px 7px inset #222121;
-  background: transparent;
-  width: 90%;
-  margin: 0 auto;
-  overflow-x: hidden;
-}
-#skills .skills-icons-container {
-  width: 200%;
-  min-height: 400px;
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1em;
 }
-#skills .skills-icons {
-  width: 100%;
+#skills .skills__carousel {
+  flex: 2;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding: 1em;
+  margin-left: auto;
 }
-#skills .skills-icons.animating.right, #skills .skills-icons.animating.right-current {
-  animation: 1s cubic-bezier(0.69, -0.08, 0.47, 0.99) slide-right;
-}
-#skills .skills-icons.animating.left {
-  animation: 1s cubic-bezier(0.69, -0.08, 0.47, 0.99) slide-left;
-}
-#skills .skills-icons.animating.left-current {
-  animation: 1s cubic-bezier(0.69, -0.08, 0.47, 0.99) slide-left-current;
-}
-#skills .skills-left,
-#skills .skills-right {
-  display: none;
-  color: #222121;
+#skills .skills__carousel .skills__carousel__left,
+#skills .skills__carousel .skills__carousel__right {
   background: transparent;
   border: none;
-  font-size: 1.5em;
-  max-width: 5%;
-  margin: 0 0.25em;
-  align-self: center;
-  margin: 0 auto;
+  font-size: 2em;
 }
-#skills .skills-left:hover,
-#skills .skills-right:hover {
+#skills .skills__carousel .skills__carousel__left:hover,
+#skills .skills__carousel .skills__carousel__right:hover {
   cursor: pointer;
 }
-@media (min-width: 760px) {
-  #skills .skills-left,
-#skills .skills-right {
-    display: inline-block;
-  }
+#skills .skills__carousel .icon-full {
+  margin: 0 auto;
+  width: 400px;
+  height: 560px;
+  max-width: 90%;
+  max-height: 90%;
+}
+#skills .skills__carousel .icon-full .skills__card__desc {
+  font-size: 1em;
+}
+#skills .skills__carousel .icon-full .skills__card__title {
+  font-size: 1.5em;
+}
+#skills .skills__carousel .icon-full .view__projects__button {
+  margin: auto 0 0.5em;
+}
+#skills .skills__carousel .icon-full.fade--in {
+  animation: 0.5s ease-in fade--in forwards;
+}
+#skills .skills__carousel .icon-full.fade--out {
+  animation: 0.5s ease-in fade--out forwards;
 }
 
 #skills .icon-full {
@@ -471,139 +490,186 @@ a {
   margin-bottom: 0.5em;
   font-size: 1.15em;
 }
-#skills .icon-full.hover:hover {
+
+#html .icon-img {
+  background-color: #f3722c;
+}
+#html.icon-full:hover {
+  box-shadow: 0px 10px 20px #f3722c;
+  transform: translateY(-2.5%);
+}
+#html.skills__icon:hover {
+  box-shadow: 0px 0px 10px #f3722c;
   transform: translateY(-5%);
   cursor: pointer;
 }
-#skills #html .icon-img {
+#html.skills__icon {
   background-color: #f3722c;
 }
-#skills #html.hover:hover {
-  box-shadow: 0px 20px 60px #f3722c;
-}
-#skills #css .icon-img {
+
+#css .icon-img {
   background-color: #43aa8b;
 }
-#skills #css.hover:hover {
-  box-shadow: 0px 20px 60px #43aa8b;
+#css.icon-full:hover {
+  box-shadow: 0px 10px 20px #43aa8b;
+  transform: translateY(-2.5%);
 }
-#skills #js .icon-img {
-  background-color: #f9c74f;
+#css.skills__icon:hover {
+  box-shadow: 0px 0px 10px #43aa8b;
+  transform: translateY(-5%);
+  cursor: pointer;
 }
-#skills #js.hover:hover {
-  box-shadow: 0px 20px 60px #f9c74f;
-}
-#skills #react .icon-img {
-  background-color: #61DBFB;
-}
-#skills #react.hover:hover {
-  box-shadow: 0px 20px 60px #61DBFB;
-}
-#skills #sass .icon-img {
-  background-color: #cc6699;
-}
-#skills #sass.hover:hover {
-  box-shadow: 0px 20px 60px #cc6699;
-}
-#skills #node .icon-img {
-  background-color: #34ec5c;
-}
-#skills #node.hover:hover {
-  box-shadow: 0px 20px 60px #34ec5c;
-}
-#skills #express .icon-img {
-  background-color: #577590;
-}
-#skills #express.hover:hover {
-  box-shadow: 0px 20px 60px #577590;
-}
-#skills #git .icon-img {
-  background-color: #f94144;
-}
-#skills #git.hover:hover {
-  box-shadow: 0px 20px 60px #f94144;
-}
-#skills #jira .icon-img {
-  background-color: #4389f1;
-}
-#skills #jira.hover:hover {
-  box-shadow: 0px 20px 60px #4389f1;
+#css.skills__icon {
+  background-color: #43aa8b;
 }
 
-#skills-modal {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  inset: 0;
-  background-color: rgba(34, 33, 33, 0.2);
+#js .icon-img {
+  background-color: #f9c74f;
+}
+#js.icon-full:hover {
+  box-shadow: 0px 10px 20px #f9c74f;
+  transform: translateY(-2.5%);
+}
+#js.skills__icon:hover {
+  box-shadow: 0px 0px 10px #f9c74f;
+  transform: translateY(-5%);
+  cursor: pointer;
+}
+#js.skills__icon {
+  background-color: #f9c74f;
+}
+
+#react .icon-img {
+  background-color: #61DBFB;
+}
+#react.icon-full:hover {
+  box-shadow: 0px 10px 20px #61DBFB;
+  transform: translateY(-2.5%);
+}
+#react.skills__icon:hover {
+  box-shadow: 0px 0px 10px #61DBFB;
+  transform: translateY(-5%);
+  cursor: pointer;
+}
+#react.skills__icon {
+  background-color: #61DBFB;
+}
+
+#sass .icon-img {
+  background-color: #cc6699;
+}
+#sass.icon-full:hover {
+  box-shadow: 0px 10px 20px #cc6699;
+  transform: translateY(-2.5%);
+}
+#sass.skills__icon:hover {
+  box-shadow: 0px 0px 10px #cc6699;
+  transform: translateY(-5%);
+  cursor: pointer;
+}
+#sass.skills__icon {
+  background-color: #cc6699;
+}
+
+#node .icon-img {
+  background-color: #34ec5c;
+}
+#node.icon-full:hover {
+  box-shadow: 0px 10px 20px #34ec5c;
+  transform: translateY(-2.5%);
+}
+#node.skills__icon:hover {
+  box-shadow: 0px 0px 10px #34ec5c;
+  transform: translateY(-5%);
+  cursor: pointer;
+}
+#node.skills__icon {
+  background-color: #34ec5c;
+}
+
+#express .icon-img {
+  background-color: #577590;
+}
+#express.icon-full:hover {
+  box-shadow: 0px 10px 20px #577590;
+  transform: translateY(-2.5%);
+}
+#express.skills__icon:hover {
+  box-shadow: 0px 0px 10px #577590;
+  transform: translateY(-5%);
+  cursor: pointer;
+}
+#express.skills__icon {
+  background-color: #577590;
+}
+
+#git .icon-img {
+  background-color: #f94144;
+}
+#git.icon-full:hover {
+  box-shadow: 0px 10px 20px #f94144;
+  transform: translateY(-2.5%);
+}
+#git.skills__icon:hover {
+  box-shadow: 0px 0px 10px #f94144;
+  transform: translateY(-5%);
+  cursor: pointer;
+}
+#git.skills__icon {
+  background-color: #f94144;
+}
+
+#jira .icon-img {
+  background-color: #4389f1;
+}
+#jira.icon-full:hover {
+  box-shadow: 0px 10px 20px #4389f1;
+  transform: translateY(-2.5%);
+}
+#jira.skills__icon:hover {
+  box-shadow: 0px 0px 10px #4389f1;
+  transform: translateY(-5%);
+  cursor: pointer;
+}
+#jira.skills__icon {
+  background-color: #4389f1;
+}
+
+#sql .icon-img {
+  background-color: #00758f;
+}
+#sql.icon-full:hover {
+  box-shadow: 0px 10px 20px #00758f;
+  transform: translateY(-2.5%);
+}
+#sql.skills__icon:hover {
+  box-shadow: 0px 0px 10px #00758f;
+  transform: translateY(-5%);
+  cursor: pointer;
+}
+#sql.skills__icon {
+  background-color: #00758f;
+}
+
+.skills__icon {
+  border-radius: 50%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 2;
+  width: 4.5em;
+  height: 4.5em;
+  box-shadow: 0px 0px 5px #222121;
+  transition: 0.3s ease-in box-shadow, 0.3s ease-in transform;
 }
-#skills-modal.hide {
-  display: none;
+.skills__icon .skills__icon__img {
+  width: 50%;
+  height: 50%;
 }
-#skills-modal .icon-full {
-  width: 600px;
-  height: 840px;
-  max-width: 90%;
-  max-height: 90%;
-  font-size: 1.5em;
-}
-#skills-modal .icon-full .icon-img {
-  justify-content: space-between;
-}
-#skills-modal .icon-full .icon-img img {
-  width: 200px;
-  height: 200px;
-  align-self: center;
-}
-#skills-modal .icon-full p {
-  font-size: 1em;
-}
-#skills-modal .icon-full h3 {
-  font-size: 1.5em;
-}
-#skills-modal button {
-  height: 1em;
-  width: 1em;
-  background-color: transparent;
-  border: none;
-  margin: 0.5em 0.75em;
-  opacity: 0.8;
-}
-#skills-modal button:hover {
-  cursor: pointer;
-  opacity: 1;
-}
-#skills-modal .invisible {
-  margin: 0.5em 0.75em;
-  height: 1em;
-  width: 1em;
-}
-#skills-modal .view-projects {
-  text-decoration: none;
-  color: #222121;
-  margin-top: auto;
-  margin-bottom: 0.5em;
-  font-weight: 400;
-}
-#skills-modal .view-projects span {
-  animation: bounce 1s infinite alternate;
-  display: block;
-  text-align: center;
-}
-#skills-modal.fade-in {
-  animation: slide-in 500ms ease-in-out 1 forwards;
-}
-#skills-modal.fade-out {
-  animation: slide-out 500ms ease-in-out forwards;
-}
-@media (max-width: 760px) {
-  #skills-modal {
-    display: none;
-  }
+.skills__icon .skills__icon__title {
+  margin: 0;
+  font-size: 0.7em;
+  font-weight: 500;
 }
 
 #projects {

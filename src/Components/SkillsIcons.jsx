@@ -1,21 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
 
-function SkillsIcon({ skill, mouseEnter, mouseLeave, displayModal }) {
+function SkillsIcon({ skill, changeSkill, currentSkill, skills }) {
+
+  const [skillIndex] = useState(skills.indexOf(skill))
+
   return (
     <div
-      className={`icon-full hover`}
+      className={`skills__icon`}
       id={skill.id}
-      onMouseEnter={mouseEnter}
-      onMouseLeave={mouseLeave}
-      onClick={() => displayModal(skill)}
+      onClick={()=>changeSkill(skillIndex - skills.indexOf(currentSkill), currentSkill)}
     >
-      <div className="icon-img">
-        <img src={skill.src} alt={skill.id} />
-      </div>
-      <div className="icon-main">
-        <h3> {skill.title} </h3>
-        <p>{skill.desc}</p>
-      </div>
+    <img className="skills__icon__img" src={skill.src} alt={skill.id} />
+    <p className="skills__icon__title">{skill.title}</p>
     </div>
   );
 }

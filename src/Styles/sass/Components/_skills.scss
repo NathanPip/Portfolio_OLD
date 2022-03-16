@@ -8,70 +8,60 @@
   overflow: hidden;
   background-color: $text-color;
   color: $background-color;
+  padding: 0 5% 0;
 
   .skills-title {
-    padding: 0 5% 0;
     width: 100%;
     flex-basis: 100%;
   }
   .full-skills-container {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
     width: 100%;
   }
   .skills-container {
+    flex: 1;
+    padding: 1em;
     border-radius: 0.25em;
     box-shadow: 0px 0px 7px inset $background-color;
-    background: transparent;
-    width: 90%;
-    margin: 0 auto;
-    overflow-x: hidden;
-  }
-  .skills-icons-container {
-    width: 200%;
-    min-height: 400px;
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1em;
   }
-
-  .skills-icons {
-    width: 100%;
+  .skills__carousel {
+    flex: 2;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    &.animating {
-      &.right,
-      &.right-current {
-        animation: 1s cubic-bezier(0.69, -0.08, 0.47, 0.99) slide-right;
-      }
-      &.left {
-        animation: 1s cubic-bezier(0.69, -0.08, 0.47, 0.99) slide-left;
-      }
-      &.left-current {
-        animation: 1s cubic-bezier(0.69, -0.08, 0.47, 0.99) slide-left-current;
+    padding: 1em;
+    margin-left: auto;
+    .skills__carousel__left,
+    .skills__carousel__right {
+      background: transparent;
+      border: none;
+      font-size: 2em;
+      &:hover {
+        cursor: pointer;
       }
     }
-  }
-
-  .skills-left,
-  .skills-right {
-    display: none;
-    color: $background-color;
-    background: transparent;
-    border: none;
-    font-size: 1.5em;
-    max-width: 5%;
-    margin: 0 0.25em;
-    align-self: center;
-    margin: 0 auto;
-    &:hover {
-      cursor: pointer;
-    }
-  }
-  @include breakpoint($medium) {
-    .skills-left,
-    .skills-right {
-      display: inline-block;
+    .icon-full {
+      margin: 0 auto;
+      @include cardSize(400px);
+      .skills__card__desc {
+        font-size: 1em;
+      }
+      .skills__card__title {
+        font-size: 1.5em;
+      }
+      .view__projects__button {
+        margin: auto 0 0.5em;
+      }
+      &.fade--in {
+        animation: 0.5s ease-in fade--in forwards;
+      }
+      &.fade--out {
+        animation: 0.5s ease-in fade--out forwards;
+      }
     }
   }
 }
