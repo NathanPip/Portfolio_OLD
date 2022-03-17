@@ -729,7 +729,6 @@ a {
   flex-wrap: wrap;
   gap: 2em;
   border-bottom: 1px solid #222121;
-  animation: fade-in 0.75s ease-in-out forwards;
 }
 #projects .project-head {
   max-width: 25em;
@@ -798,6 +797,9 @@ a {
 }
 #projects .project-buttons .live-demo {
   margin-right: 1em;
+}
+#projects .fade-in {
+  animation: fade-in 1s ease-in;
 }
 @media (min-width: 760px) {
   #projects .project-card {

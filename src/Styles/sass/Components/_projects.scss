@@ -46,7 +46,6 @@
     flex-wrap: wrap;
     gap: 2em;
     border-bottom: 1px solid $background-color;
-    animation: fade-in .75s ease-in-out forwards;
   }
   .project-head {
     max-width: 25em;
@@ -114,6 +113,9 @@
     .live-demo {
       margin-right: 1em;
     }
+  }
+  .fade-in {
+    animation: fade-in 1s ease-in;
   }
   @include breakpoint($medium) {
     .project-card {
