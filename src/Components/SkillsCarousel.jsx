@@ -18,7 +18,6 @@ function SkillsCarousel({ skill, changeSkill }, ref) {
             <a
               className="view__projects__button"
               href="#projects"
-              onClick={() => exitModal()}
             >
               view projects<span>🡣</span>
             </a>
