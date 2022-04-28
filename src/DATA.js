@@ -48,13 +48,13 @@ const DATA = {
       desc:
         "knowledge in express routing and using express HTTP methods and middlewear"
     },
-    {
-      id: "sql",
-      title: "SQL",
-      src: "https://img.icons8.com/ios/100/000000/database.png",
-      desc:
-        "knowledge in querying Postgres and MySQL databases using SQL"
-    },
+    // {
+    //   id: "sql",
+    //   title: "SQL",
+    //   src: "https://img.icons8.com/ios/100/000000/database.png",
+    //   desc:
+    //     "knowledge in querying Postgres and MySQL databases using SQL"
+    // },
     {
       id: "git",
       title: "Git",
@@ -76,34 +76,36 @@ const DATA = {
       id: "players-plug",
       title: "Player's Plug",
       thumbnail: "/imgs/players-plug-img.png",
+      alert: "Alert: Project deployed using Heroku so wait 10-15 seconds for site to load.",
       desc:
-        "Player's Plug is a web app that allows users to view the best pc video game deals across the entire web and add them to a wishlist if they make an account",
-      skills: ["react", "sass", "webpack", "steam api", "cheapshark api", "node", "express", "firebase", "PostgreSQL"],
+        "Player's Plug is a web app that allows users to view the best pc video game deals across the entire web and add them to a wishlist if they make an account.",
+      skills: ["react", "sass", "vite", "steam api", "cheapshark api", "node", "express", "firebase", "PostgreSQL"],
       filter: ["Featured"],
       github: "https://github.com/nather22/game-deals-site",
       live: "https://players-plug.herokuapp.com/"
     },
     {
+      id: "kanban-board",
+      title: "Kanban Board",
+      thumbnail: "/imgs/kanban-board-img.png",
+      desc:
+        "A Kanban Board web app that I created to help manage my projects.",
+      skills: ["javascript", "sass", "html", "vite"],
+      filter: ["Featured"],
+      github: "https://github.com/nather22/Kanban-Board",
+      live: "https://sparkly-scone-27060c.netlify.app/"
+    },
+    {
       id: "canvas-arcade",
       title: "Canvas Arcade",
       thumbnail: "/imgs/canvas-arcade.png",
+      alert: "Alert: Project deployed using Heroku so wait 10-15 seconds for site to load.",
       desc:
-        "A site I built to host a bunch of html canvas games I made, also wrote an api and database for a global highscore system",
+        "A site I built to host a bunch of html canvas games I made, also wrote an api and database for a highscore system",
       skills: ["html","javascript", "css", "node", "express", "PostgreSQL"],
       filter: ["Featured"],
-      github: "https://github.com/nather22/CanvasArcade",
+      github: "https://github.com/nather22/Canvas_Arcade",
       live: "https://canvas-arcade.herokuapp.com/"
-    },
-    {
-      id: "my-love",
-      title: "For My Girlfriend",
-      thumbnail: "/imgs/my-love.png",
-      desc:
-        "A web app I made for my girlfriend and I that hosts a few slideshows of us and allows us to send messages to eachother",
-      skills: ["react", "css", "node", "express", "PostgreSQL"],
-      filter: ["Featured"],
-      github: "https://github.com/nather22/ILoveYou",
-      live: "https://jenna-my-love.herokuapp.com/"
     },
     {
       id: "portfolio",
@@ -111,10 +113,21 @@ const DATA = {
       thumbnail: "/imgs/portfolio-img.png",
       desc:
         "My personal portfolio, the site you're currently on, written in React and scss",
-      skills: ["react", "sass", "webpack"],
-      filter: [""],
+      skills: ["react", "sass", "vite"],
+      filter: ["Featured"],
       github: "https://github.com/nather22/Portfolio",
       live: "#"
+    },
+    {
+      id: "my-love",
+      title: "For My Girlfriend",
+      thumbnail: "/imgs/my-love.png",
+      desc:
+        "A web app I made for my girlfriend and I that hosts a few slideshows of us and allows us to send messages to eachother",
+      skills: ["react", "css", "mongoDB", "Back4App", "vite"],
+      filter: [""],
+      github: "https://github.com/nather22/ILoveYou",
+      live: "https://youthful-ardinghelli-edd7aa.netlify.app/"
     },
     {
       id: "color-picker",

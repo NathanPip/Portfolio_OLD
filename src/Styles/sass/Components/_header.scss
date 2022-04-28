@@ -16,7 +16,7 @@
     flex-wrap: wrap;
   }
   .header-links {
-    animation: slide-in-bottom 1s cubic-bezier(0.21, 1.1, 0.72, 1.05) forwards;    
+    animation: slide-in-bottom 1.25s cubic-bezier(0.21, 1.1, 0.72, 1.1) forwards;    
     display: flex;
     flex-wrap: wrap;
     list-style: none;
@@ -42,13 +42,13 @@
     }
   }
   .about-me {
-    animation: slide-in-right 1s cubic-bezier(0.21, 1.1, 0.72, 1) forwards;
+    animation: slide-in-right 1.25s cubic-bezier(0.21, 1.1, 0.72, 1.05) forwards;
     font-size: 1em;
     margin: 0;
     font-weight: 300;
   }
   #title {
-    animation: slide-in-left 1s cubic-bezier(0.21, 1.1, 0.72, 1) forwards;
+    animation: slide-in-left 1.25s cubic-bezier(0.21, 1.1, 0.72, 1) forwards;
     font-size: 3em;
     font-weight: 400;
     margin: 0;

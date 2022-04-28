@@ -1,9 +1,17 @@
 @use "../Utils" as *;
 
-#contact {
+.contact {
   display: flex;
   flex-direction: column;
   padding: 0 5% 0;
+  .contact-form-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    &.slide-in-right {
+      animation: slide-in-right 1s cubic-bezier(0.21, 1.1, 0.72, 1.05);
+    }
+  }
   .contact-form {
     display: flex;
     flex-direction: column;
@@ -14,6 +22,9 @@
   .contact-aside {
     max-width: 1000px;
     margin: 0 auto;
+    &.slide-in-left {
+      animation: slide-in-left 1s cubic-bezier(0.21, 1.1, 0.72, 1.05);
+    }
   }
   p {
     display: flex;
@@ -62,6 +73,11 @@
       background: rgba($background-color, .8);
     }
   }
+
+  &.fade-in {
+    animation: fade-in .5s ease-in;
+  }
+
   @include breakpoint($extra-large) {
     .contact-body {
       display: flex;

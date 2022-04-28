@@ -1,6 +1,6 @@
 @use "../Utils" as *;
 
-#projects {
+.projects {
   width: 100%;
   margin-bottom: 2em;
   display: flex;
@@ -36,6 +36,24 @@
       background-color: rgba($background-color, 0.1);
     }
   }
+  .projects-view-more-btn {
+    background-color: transparent;
+    margin-top: 1em;
+    border: none;
+    border-bottom: 2px solid rgba($background-color, 0.5);
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    span {
+      display: block;
+      font-size: 0.75em;
+    }
+    &:hover {
+      cursor: pointer;
+      span {
+        animation: bounce 1s ease-in-out alternate infinite;
+      }
+    }
+  }
   .project-card {
     font-size: 0.85em;
     width: 90%;
@@ -46,6 +64,9 @@
     flex-wrap: wrap;
     gap: 2em;
     border-bottom: 1px solid $background-color;
+    &.fade-in {
+      animation: fade-in 1s ease-in;
+    }
   }
   .project-head {
     max-width: 25em;
@@ -60,7 +81,7 @@
   }
   .project-image {
     width: 100%;
-    transition: .35s ease-in;
+    transition: 0.35s ease-in;
     &:hover {
       transform: scale(1.03);
       box-shadow: 0px 4px 7px $background-color;
@@ -73,6 +94,11 @@
     margin-bottom: 0.5em;
     font-size: 1.5em;
     font-weight: 400;
+  }
+  .project-alert {
+    margin: 0;
+    font-size: 0.8em;
+    font-style: italic;
   }
   .project-desc {
     margin: auto 0;
@@ -94,7 +120,7 @@
     }
   }
   .project-buttons {
-    margin-top: 1em;
+    margin-top: auto;
     margin-left: auto;
     font-size: 0.8em;
     .live-demo,
@@ -114,8 +140,8 @@
       margin-right: 1em;
     }
   }
-  .fade-in {
-    animation: fade-in 1s ease-in;
+  &.fade-in {
+    animation: fade-in .5s ease-in;
   }
   @include breakpoint($medium) {
     .project-card {

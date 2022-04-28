@@ -59,8 +59,7 @@ function Header() {
           </li>
         </ul>
         <p className="about-me">
-          a dedicated front-end developer with a love for code and hands-on
-          experience designing and developing websites and web apps
+          A passionate web developer who loves making cool stuff. Check out my work below.
         </p>
       </div>
       <Nav />

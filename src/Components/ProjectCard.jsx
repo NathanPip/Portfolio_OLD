@@ -22,6 +22,8 @@ function ProjectCard({ project }) {
           </ul>
         </div>
         <div className="project-body">
+          {project.alert ? 
+          <p className="project-alert">{project.alert}</p> : null}
           <p className="project-desc">{project.desc}</p>
           <div className="project-buttons">
             <a href={project.live} target="_blank" rel="noreferrer">

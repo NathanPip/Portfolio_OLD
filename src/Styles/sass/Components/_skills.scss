@@ -1,7 +1,7 @@
 @use "../Utils" as *;
 
-#skills {
-  font-size: .75em;
+.skills {
+  font-size: 0.65em;
   margin-bottom: 1em;
   display: flex;
   flex-direction: column;
@@ -10,6 +10,9 @@
   background-color: $text-color;
   color: $background-color;
   padding: 0 5% 0;
+  &.fade-in {
+    animation: fade-in .5s ease-in;
+  }
   .full-skills-container {
     display: flex;
     justify-content: center;
@@ -17,7 +20,7 @@
   }
   .skills-container {
     flex: 1;
-    min-width: 300px;
+    min-width: 250px;
     max-width: 100%;
     padding: 1em;
     border-radius: 0.25em;
@@ -26,13 +29,17 @@
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 1em;
+    &.slide-in-left {
+      animation: slide-in-left 1s cubic-bezier(0.21, 1.1, 0.72, 1.1);
+    }
   }
   .skills__carousel {
     flex: 2;
+    max-width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 1.5em  0;
+    padding: 1.5em 0;
     margin-left: auto;
     .skills__carousel__left,
     .skills__carousel__right {
@@ -46,12 +53,18 @@
     .icon-full {
       margin: 0 auto;
     }
+    &.slide-in-right {
+      animation: slide-in-right 1s cubic-bezier(0.21, 1.1, 0.72, 1.1);
+    }
+  }
+  @include breakpoint($small) {
+    font-size: 0.75em;
   }
   @include breakpoint($medium) {
-    font-size: .8em;
+    font-size: 0.8em;
   }
   @include breakpoint($large) {
-    font-size: .9em;
+    font-size: 0.9em;
   }
   @include breakpoint($extra-large) {
     font-size: 1.1em;
