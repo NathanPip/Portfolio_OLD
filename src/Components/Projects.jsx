@@ -32,7 +32,7 @@ function Projects({ projects }) {
       offset={200}
       animateOnce={true}
       >
-      <div className="projects-header-container">
+      <div id="projects" className="projects-header-container">
         <h2 className="projects-title">Projects</h2>
         {buttons.map((button, index) => {
           return (

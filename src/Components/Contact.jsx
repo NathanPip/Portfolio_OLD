@@ -46,7 +46,7 @@ function Contact() {
       offset={200}
       animateOnce={true}
       >
-      <h2 className="contact-form-title">Contact</h2>
+      <h2 id="contact" className="contact-form-title">Contact</h2>
       <div className="contact-body">
         <AnimationOnScroll
           className="contact-aside"

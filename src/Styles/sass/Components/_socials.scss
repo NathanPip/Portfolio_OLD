@@ -1,0 +1,11 @@
+@use "../Utils" as *;
+
+.socials {
+    &.fade-in {
+        animation: fade-in .5s ease-in;
+    }
+    &__title {
+        padding-left: 5%;
+    }
+    
+}

@@ -93,7 +93,7 @@ const DATA = {
       skills: ["javascript", "sass", "html", "vite"],
       filter: ["Featured"],
       github: "https://github.com/nather22/Kanban-Board",
-      live: "https://sparkly-scone-27060c.netlify.app/"
+      live: "https://gitban.netlify.app/"
     },
     {
       id: "canvas-arcade",

@@ -49,7 +49,7 @@ function Skills({ skills }) {
       offset={200}
       animateOnce={true}
     >
-      <h2 className="skills-title">Skills</h2>
+      <h2 id="skills" className="skills-title">Skills</h2>
       <div className="full-skills-container">
         <AnimationOnScroll
           className="skills-container"
