@@ -1,8 +1,21 @@
-import React, { useEffect, useRef, useState } from "react";
-import { isVisibleEvent } from "../helpers";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 
-export default function Tweet(tweetObject, setNewPage, index, listLength) {
+export default function Tweet(tweetObject) {
   const textElement = useRef();
+  const observer = useRef();
+  const tweetObserver = useCallback(
+    (node) => {
+      if (observer.current) observer.current.disconnect();
+      observer.current = new IntersectionObserver((entries) => {
+        console.log(entries);
+        if (entries[0].isIntersecting) {
+          entries[0].target.classList.add("fade-in")
+        }
+      });
+      if (node) observer.current.observe(node);
+    },
+    []
+  );
 
   useEffect(() => {
     let tweet = tweetObject.tweetObject;
@@ -11,27 +24,12 @@ export default function Tweet(tweetObject, setNewPage, index, listLength) {
     }
   }, [tweetObject]);
 
-  // useEffect(() => {
-  //   console.log(tweetObject)
-  //   console.log(setNewPage)
-  //   console.log(index)
-  //   console.log(listLength)
-  //   if (listLength) {
-  //     if (index === listLength - 1) {
-  //       console.log("exists");
-  //       isVisibleEvent(textElement, (visible, observer) => {
-  //         if (visible) {
-  //           console.log("visible")
-  //           setNewPage((prevPage) => prevPage + 1);
-  //           observer.unobserve(textElement);
-  //         }
-  //       });
-  //     }
-  //   }
-  // }, [listLength]);
 
   return (
-    <div className="socials__tweet">
+    <div
+      className="socials__tweet"
+      ref={tweetObserver}
+    >
       <img
         className="tweet__profile__img"
         src="/imgs/profile.jpg"

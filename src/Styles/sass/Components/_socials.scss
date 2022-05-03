@@ -102,6 +102,9 @@
     //   ".   .   text text";
     column-gap: 0.75em;
     font-size: 0.6em;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+    transition-delay: .25s;
     .tweet__profile__img {
       width: 4em;
       border-radius: 50%;
@@ -133,6 +136,9 @@
       font-size: 1.1em;
       margin: 0;
       grid-area: text;
+    }
+    &.fade-in {
+      opacity: 1;
     }
   }
 }

@@ -10,19 +10,19 @@ export default function Socials() {
   const [tweetElements, setTweetElements] = useState([]);
   const { loading, error, tweets } = useGetTweets(pageNum);
   const twitterContainer = useRef();
-  const lastTweetElement = useRef();
 
-  const observer = useRef();
-  const lastTweetObserver = useCallback(
+  const lastTweetObserver = useRef();
+  const lastTweetObserverHandler = useCallback(
     (node) => {
       if (loading) return;
-      if (observer.current) observer.current.disconnect();
-      observer.current = new IntersectionObserver((entries) => {
+      if (lastTweetObserver.current) lastTweetObserver.current.disconnect();
+      lastTweetObserver.current = new IntersectionObserver((entries) => {
+        console.log(entries);
         if (entries[0].isIntersecting) {
           setPageNum((prev) => prev + 1);
         }
       });
-      if (node) observer.current.observe(node);
+      if (node) lastTweetObserver.current.observe(node);
     },
     [loading]
   );
@@ -34,33 +34,35 @@ export default function Socials() {
   }, [loading]);
 
   // useEffect(() => {
-  //   console.log("called");
-  //   if (tweetElements && lastTweetElement.current) {
-  //     console.log(lastTweetElement)
-  //     isVisibleEvent(
-  //       lastTweetElement.current,
-  //       (visible, observer) => {
-  //         if (visible) {
-  //           console.log("visible");
-  //           setPageNum((prevPage) => prevPage + 1);
-  //           observer.unobserve(lastTweetElement.current);
-  //         }
+  //   if (twitterContainer.current) {
+  //     const containerScroll =
+  //       twitterContainer.current.scrollTop +
+  //       twitterContainer.current.getBoundingClientRect().height;
+  //     console.log(containerScroll);
+  //     setTwitterListScroll(containerScroll);
+  //     const listener = twitterContainer.current.addEventListener(
+  //       "scroll",
+  //       () => {
+  //         const containerScroll =
+  //           twitterContainer.current.scrollTop +
+  //           twitterContainer.current.getBoundingClientRect().height;
+  //         setTwitterListScroll(containerScroll);
+  //         console.log(containerScroll);
   //       }
   //     );
+  //     return () => removeEventListener("scroll", listener);
   //   }
-  // }, [lastTweetElement, loading]);
+  // }, [twitterContainer]);
 
   const createTweetElements = () => {
-    const listLength = tweets.length;
     const tweetEls = tweets.map((tweet, index) => {
       return (
-        <div className="tweet__container" ref={index === tweets.length-1 ? lastTweetObserver : null} key={tweet.id}>
-          <Tweet       
-            tweetObject={tweet}
-            setNewPage={setPageNum}
-            index={tweets.indexOf(tweet)}
-            listLength={listLength}
-          />
+        <div
+          className="tweet__container"
+          ref={index === tweets.length - 1 ? lastTweetObserverHandler : null}
+          key={tweet.id}
+        >
+          <Tweet tweetObject={tweet} />
         </div>
       );
     });
