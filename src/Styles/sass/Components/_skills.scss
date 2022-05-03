@@ -17,6 +17,7 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    max-width: 100%;
   }
   .skills-container {
     flex: 1;
@@ -45,6 +46,7 @@
     .skills__carousel__right {
       background: transparent;
       border: none;
+      color: $background-color;
       font-size: 1.75em;
       &:hover {
         cursor: pointer;
