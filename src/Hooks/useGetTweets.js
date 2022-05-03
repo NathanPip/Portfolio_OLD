@@ -23,7 +23,6 @@ export default function useGetTweets(pageNum) {
           const newPageUrl = new URLSearchParams({
             pagination_token: nextToken,
           });
-          console.log(nextToken)
           const res = await fetch(`/.netlify/functions/node-fetch?${nextToken ? newPageUrl : ''}`);
           const body = await res.json();
           const filteredTweets = body.data.filter((tweet) =>

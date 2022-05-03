@@ -1,12 +1,10 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import { AnimationOnScroll } from "react-animation-on-scroll";
-import { isVisibleEvent, stringContains } from "../helpers";
 import useGetTweets from "../Hooks/useGetTweets";
 import Tweet from "./Tweet";
 
 export default function Socials() {
   const [pageNum, setPageNum] = useState(0);
-  const [twitterListScroll, setTwitterListScroll] = useState(null);
   const [tweetElements, setTweetElements] = useState([]);
   const { loading, error, tweets } = useGetTweets(pageNum);
   const twitterContainer = useRef();
@@ -17,7 +15,6 @@ export default function Socials() {
       if (loading) return;
       if (lastTweetObserver.current) lastTweetObserver.current.disconnect();
       lastTweetObserver.current = new IntersectionObserver((entries) => {
-        console.log(entries);
         if (entries[0].isIntersecting) {
           setPageNum((prev) => prev + 1);
         }
@@ -33,26 +30,6 @@ export default function Socials() {
     }
   }, [loading]);
 
-  // useEffect(() => {
-  //   if (twitterContainer.current) {
-  //     const containerScroll =
-  //       twitterContainer.current.scrollTop +
-  //       twitterContainer.current.getBoundingClientRect().height;
-  //     console.log(containerScroll);
-  //     setTwitterListScroll(containerScroll);
-  //     const listener = twitterContainer.current.addEventListener(
-  //       "scroll",
-  //       () => {
-  //         const containerScroll =
-  //           twitterContainer.current.scrollTop +
-  //           twitterContainer.current.getBoundingClientRect().height;
-  //         setTwitterListScroll(containerScroll);
-  //         console.log(containerScroll);
-  //       }
-  //     );
-  //     return () => removeEventListener("scroll", listener);
-  //   }
-  // }, [twitterContainer]);
 
   const createTweetElements = () => {
     const tweetEls = tweets.map((tweet, index) => {
