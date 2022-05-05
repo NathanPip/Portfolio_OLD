@@ -7,7 +7,6 @@ export default function Tweet(tweetObject) {
     (node) => {
       if (observer.current) observer.current.disconnect();
       observer.current = new IntersectionObserver((entries) => {
-        console.log(entries);
         if (entries[0].isIntersecting) {
           entries[0].target.classList.add("fade-in")
         }

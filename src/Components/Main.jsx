@@ -7,8 +7,8 @@ import Socials from "./Socials";
 function Main({ skills, projects }) {
   return (
     <div className="main">
-      <Skills skills={skills} />
       <Projects projects={projects} />
+      <Skills skills={skills} />
       <Socials />
       <Contact />
     </div>

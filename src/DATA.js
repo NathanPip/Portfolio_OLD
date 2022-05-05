@@ -77,6 +77,7 @@ const DATA = {
       title: "Player's Plug",
       thumbnail: "/imgs/players-plug-img.png",
       alert: "Alert: Project deployed using Heroku so wait 10-15 seconds for site to load.",
+      demo: "Demo Login: EMAIL: demo@demo.com PW: demodemo",
       desc:
         "Player's Plug is a web app that allows users to view the best pc video game deals across the entire web and add them to a wishlist if they make an account.",
       skills: ["react", "sass", "vite", "steam api", "cheapshark api", "node", "express", "firebase", "PostgreSQL"],
@@ -114,7 +115,7 @@ const DATA = {
       desc:
         "My personal portfolio, the site you're currently on, written in React and scss",
       skills: ["react", "sass", "vite"],
-      filter: ["Featured"],
+      filter: [""],
       github: "https://github.com/nather22/Portfolio",
       live: "#"
     },

@@ -24,6 +24,24 @@ function Projects({ projects }) {
     setCurrentFilter(filter);
   };
 
+  const displayButtons = () => {
+    return buttons.map((button, index) => {
+      return (
+        <button
+          className={
+            index === selectedButton
+              ? "filter-button active"
+              : "filter-button"
+          }
+          key={index.toString()}
+          onClick={() => handleOnClick(index, button)}
+        >
+          {button}
+        </button>
+      );
+    })
+  }
+
   return (
     <AnimationOnScroll
       className="projects"
@@ -31,34 +49,30 @@ function Projects({ projects }) {
       duration={0.5}
       offset={200}
       animateOnce={true}
-      >
+    >
       <div id="projects" className="projects-header-container">
         <h2 className="projects-title">Projects</h2>
-        {buttons.map((button, index) => {
-          return (
-            <button
-              className={
-                index === selectedButton
-                  ? "filter-button active"
-                  : "filter-button"
-              }
-              key={index.toString()}
-              onClick={() => handleOnClick(index, button)}
-            >
-              {button}
-            </button>
-          );
-        })}
+        {displayButtons()}
       </div>
-      {displayProjects(currentFilter)}
-      <button
-        className={`projects-view-more-btn ${
+      <div className="projects-container">{displayProjects(currentFilter)}</div>
+      <AnimationOnScroll
+        className={`projects-view-more-container ${
           currentFilter === "All" ? "hide" : null
         }`}
-        onClick={() => setCurrentFilter("All")}
+        animateIn="fade-in"
+        duration={0.5}
+        offset={200}
+        animateOnce={true}
       >
-        View More<span>🡣</span>
-      </button>
+        <button
+          className={`projects-view-more-btn ${
+            currentFilter === "All" ? "hide" : null
+          }`}
+          onClick={() => setCurrentFilter("All")}
+        >
+          View More<span>🡣</span>
+        </button>
+      </AnimationOnScroll>
     </AnimationOnScroll>
   );
 }
