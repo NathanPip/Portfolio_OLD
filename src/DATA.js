@@ -138,7 +138,7 @@ const DATA = {
         "A photography portfolio site",
       skills: ["html", "css", "sass", "javascript"],
       filter: ["Client Work"],
-      live: "chrisporterphotography.netlify.app"
+      live: "https://chrisporterphotography.netlify.app/"
     },
     {
       id: "color-picker",
