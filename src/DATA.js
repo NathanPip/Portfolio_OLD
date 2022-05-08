@@ -81,7 +81,7 @@ const DATA = {
       desc:
         "Player's Plug is a web app that allows users to view the best pc video game deals across the entire web and add them to a wishlist if they make an account.",
       skills: ["react", "sass", "vite", "steam api", "cheapshark api", "node", "express", "firebase", "PostgreSQL"],
-      filter: ["Featured"],
+      filter: ["Featured", "Cool Projects"],
       github: "https://github.com/nather22/game-deals-site",
       live: "https://players-plug.herokuapp.com/"
     },
@@ -92,7 +92,7 @@ const DATA = {
       desc:
         "A Kanban Board web app that I created to help manage my projects.",
       skills: ["javascript", "sass", "html", "vite"],
-      filter: ["Featured"],
+      filter: ["Featured", "Cool Projects"],
       github: "https://github.com/nather22/Kanban-Board",
       live: "https://gitban.netlify.app/"
     },
@@ -104,7 +104,7 @@ const DATA = {
       desc:
         "A site I built to host a bunch of html canvas games I made, also wrote an api and database for a highscore system",
       skills: ["html","javascript", "css", "node", "express", "PostgreSQL"],
-      filter: ["Featured"],
+      filter: ["Featured", "Cool Projects"],
       github: "https://github.com/nather22/Canvas_Arcade",
       live: "https://canvas-arcade.herokuapp.com/"
     },
@@ -115,7 +115,7 @@ const DATA = {
       desc:
         "My personal portfolio, the site you're currently on, written in React and scss",
       skills: ["react", "sass", "vite"],
-      filter: [""],
+      filter: ["Cool Projects"],
       github: "https://github.com/nather22/Portfolio",
       live: "#"
     },
@@ -126,9 +126,19 @@ const DATA = {
       desc:
         "A web app I made for my girlfriend and I that hosts a few slideshows of us and allows us to send messages to eachother",
       skills: ["react", "css", "mongoDB", "Back4App", "vite"],
-      filter: [""],
+      filter: ["Cool Projects"],
       github: "https://github.com/nather22/ILoveYou",
       live: "https://youthful-ardinghelli-edd7aa.netlify.app/"
+    },
+    {
+      id: "chris-porter",
+      title: "Chris Porter Photography",
+      thumbnail: "/imgs/chris-porter.png",
+      desc:
+        "A photography portfolio site",
+      skills: ["html", "css", "sass", "javascript"],
+      filter: ["Client Work"],
+      live: "chrisporterphotography.netlify.app"
     },
     {
       id: "color-picker",

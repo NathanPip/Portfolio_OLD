@@ -3,7 +3,7 @@ import { AnimationOnScroll } from "react-animation-on-scroll";
 import ProjectCard from "./ProjectCard";
 
 function Projects({ projects }) {
-  const [buttons] = useState(["Featured", "All"]);
+  const [buttons] = useState(["Featured", "Client Work", "Cool Projects", "All"]);
   const [selectedButton, setSelectedButton] = useState(0);
   const [currentFilter, setCurrentFilter] = useState("Featured");
 

@@ -31,17 +31,19 @@ function ProjectCard({ project }) {
         {project.alert ? (
           <p className="project-alert">{project.alert}</p>
         ) : null}
-        {project.demo ? (
-          <p className="project-alert">{project.demo}</p>
-        ) : null}
+        {project.demo ? <p className="project-alert">{project.demo}</p> : null}
         <p className="project-desc">{project.desc}</p>
         <div className="project-buttons">
-          <a href={project.live} target="_blank" rel="noreferrer">
-            <button className="live-demo">Live Demo</button>
-          </a>
-          <a href={project.github} target="_blank" rel="noreferrer">
-            <button className="github">Github</button>
-          </a>
+          {project.live ? (
+            <a href={project.live} target="_blank" rel="noreferrer">
+              <button className="live-demo">Live Demo</button>
+            </a>
+          ) : null}
+          {project.github ? (
+            <a href={project.github} target="_blank" rel="noreferrer">
+              <button className="github">Github</button>
+            </a>
+          ) : null}
         </div>
       </div>
     </AnimationOnScroll>
