@@ -82,7 +82,7 @@ const DATA = {
         "Player's Plug is a web app that allows users to view the best pc video game deals across the entire web and add them to a wishlist if they make an account.",
       skills: ["react", "sass", "vite", "steam api", "cheapshark api", "node", "express", "firebase", "PostgreSQL"],
       filter: ["Featured", "Cool Projects"],
-      github: "https://github.com/nather22/game-deals-site",
+      github: "https://github.com/NathanPip/game-deals-site",
       live: "https://players-plug.herokuapp.com/"
     },
     {
@@ -93,7 +93,7 @@ const DATA = {
         "A Kanban Board web app that I created to help manage my projects.",
       skills: ["javascript", "sass", "html", "vite"],
       filter: ["Featured", "Cool Projects"],
-      github: "https://github.com/nather22/Kanban-Board",
+      github: "https://github.com/NathanPip/Kanban-Board",
       live: "https://gitban.netlify.app/"
     },
     {
@@ -105,7 +105,7 @@ const DATA = {
         "A site I built to host a bunch of html canvas games I made, also wrote an api and database for a highscore system",
       skills: ["html","javascript", "css", "node", "express", "PostgreSQL"],
       filter: ["Featured", "Cool Projects"],
-      github: "https://github.com/nather22/Canvas_Arcade",
+      github: "https://github.com/NathanPip/Canvas_Arcade",
       live: "https://canvas-arcade.herokuapp.com/"
     },
     {
@@ -116,7 +116,7 @@ const DATA = {
         "My personal portfolio, the site you're currently on, written in React and scss",
       skills: ["react", "sass", "vite"],
       filter: ["Cool Projects"],
-      github: "https://github.com/nather22/Portfolio",
+      github: "https://github.com/NathanPip/Portfolio",
       live: "#"
     },
     {
@@ -127,7 +127,7 @@ const DATA = {
         "A web app I made for my girlfriend and I that hosts a few slideshows of us and allows us to send messages to eachother",
       skills: ["react", "css", "mongoDB", "Back4App", "vite"],
       filter: ["Cool Projects"],
-      github: "https://github.com/nather22/ILoveYou",
+      github: "https://github.com/NathanPip/ILoveYou",
       live: "https://youthful-ardinghelli-edd7aa.netlify.app/"
     },
     {
@@ -148,7 +148,7 @@ const DATA = {
         "A simple game written in pure javascript where you have to pick the colored square corresponding to the rgb value you are given.",
       skills: ["javascript", "css", "html"],
       filter: [""],
-      github: "https://github.com/nather22/color-picker-game",
+      github: "https://github.com/NathanPip/color-picker-game",
       live: "https://lucid-murdock-887a65.netlify.app/"
     },
   ]

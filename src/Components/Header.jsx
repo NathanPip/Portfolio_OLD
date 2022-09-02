@@ -22,7 +22,7 @@ function Header() {
         </h1>
         <ul className="header-links">
           <li>
-            <a href="https://github.com/nather22" target="_blank" rel="noreferrer">
+            <a href="https://github.com/NathanPip" target="_blank" rel="noreferrer">
               <img
                 alt="github logo"
                 src="https://img.icons8.com/ios-glyphs/120/000000/github.png"
